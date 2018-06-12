@@ -1,0 +1,11 @@
+E:\GitHub\WMS\WMS\WMS\WMS\bin\Debug\WMS.exe
+E:\GitHub\WMS\WMS\WMS\WMS\bin\Debug\WMS.pdb
+E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.csprojResolveAssemblyReference.cache
+E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.FrmLogin.resources
+E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.FrmMain.resources
+E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.Properties.Resources.resources
+E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.csproj.GenerateResource.cache
+E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.csproj.CoreCompileInputs.cache
+E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.csproj.CopyComplete
+E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.exe
+E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.pdb
