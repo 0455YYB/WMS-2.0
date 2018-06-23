@@ -9,3 +9,4 @@ E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.csproj.CoreCompileInputs.cache
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.csproj.CopyComplete
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.exe
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.pdb
+E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.SystemSet.UserManage.resources

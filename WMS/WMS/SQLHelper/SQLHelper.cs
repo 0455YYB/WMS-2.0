@@ -25,7 +25,7 @@ namespace WMS.SQLHelper
             string selectStr = "select id,name,password,department from employee where id=@id and status=0 ";
             sqliteCom.Connection = sqliteCon;
             sqliteCom.CommandText = selectStr;
-            sqliteCom.Parameters.AddWithValue("@id", "11001");
+            sqliteCom.Parameters.AddWithValue("@id", userName);
             sqliteCon.Open();
             userInfo = sqliteCom.ExecuteReader();
             return userInfo;

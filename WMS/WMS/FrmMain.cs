@@ -14,8 +14,20 @@ namespace WMS
         public FrmMain()
         {
             InitializeComponent();
+            
         }
 
-        
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Usermage_Click(object sender, EventArgs e)
+        {
+            WMS.SystemSet.UserManage userManage = WMS.SystemSet.UserManage.GetUserManage();
+            userManage.MdiParent = this;
+            userManage.Dock = DockStyle.Fill;
+            userManage.Show();
+        }
     }
 }

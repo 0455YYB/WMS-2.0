@@ -35,14 +35,25 @@ namespace WMS
                     else
                     {
                         SQLiteDataReader userInfo = sh.GetLoginInfo(this.Tex_userName.Text.Trim());
-                        userInfo.Read();
-                        if((string)userInfo["password"]==Tex_password.Text.Trim())
+                        if(userInfo.Read())
                         {
-                            FrmMain frmMain = new FrmMain();
-                            frmMain.Owner = this;
-                            frmMain.Show();
-                            this.Hide();
+                            if ((string)userInfo["password"] == Tex_password.Text.Trim())
+                            {
+                                FrmMain frmMain = new FrmMain();
+                                frmMain.Owner = this;
+                                frmMain.Show();
+                                this.Hide();
+                                userInfo.Close();
+                                sh.sqliteCon.Close();
+                            }
                         }
+                        else
+                        {
+                            userInfo.Close();
+                            sh.sqliteCon.Close();
+                            MessageBox.Show("用户不存在");
+                        }
+                        
                     }
                                     
                 }
