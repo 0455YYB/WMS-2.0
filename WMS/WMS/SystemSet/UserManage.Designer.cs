@@ -153,7 +153,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(7, 26);
-            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Name = "Dgv_userInfo";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(240, 121);
             this.dataGridView1.TabIndex = 0;
@@ -367,5 +367,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox Tex_code;
+
+      
+        
+
     }
 }
