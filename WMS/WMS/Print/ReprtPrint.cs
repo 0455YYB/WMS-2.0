@@ -15,5 +15,11 @@ namespace WMS.Print
         {
             InitializeComponent();
         }
+
+        private void ReprtPrint_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }
