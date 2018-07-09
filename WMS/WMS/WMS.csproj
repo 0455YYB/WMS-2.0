@@ -10,6 +10,7 @@
     <AssemblyName>WMS</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -22,7 +23,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -94,6 +94,14 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>OrderData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\OutStore.cs">
+      <DependentUpon>OutStore.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\OutStore.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutStore.xsd</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
@@ -177,6 +185,17 @@
     </None>
     <None Include="DataSet\OrderData.xss">
       <DependentUpon>OrderData.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\OutStore.xsc">
+      <DependentUpon>OutStore.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\OutStore.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OutStore.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\OutStore.xss">
+      <DependentUpon>OutStore.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="OutStore" targetNamespace="http://tempuri.org/OutStore.xsd" xmlns:mstns="http://tempuri.org/OutStore.xsd" xmlns="http://tempuri.org/OutStore.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="OutStore" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="OutStore" msprop:Generator_UserDSName="OutStore">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Out" msprop:Generator_TableClassName="OutDataTable" msprop:Generator_TableVarName="tableOut" msprop:Generator_TablePropName="Out" msprop:Generator_RowDeletingName="OutRowDeleting" msprop:Generator_RowChangingName="OutRowChanging" msprop:Generator_RowEvHandlerName="OutRowChangeEventHandler" msprop:Generator_RowDeletedName="OutRowDeleted" msprop:Generator_UserTableName="Out" msprop:Generator_RowChangedName="OutRowChanged" msprop:Generator_RowEvArgName="OutRowChangeEvent" msprop:Generator_RowClassName="OutRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
