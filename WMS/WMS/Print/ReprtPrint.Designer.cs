@@ -29,55 +29,36 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.orderData = new WMS.DataSet.OrderData();
-            this.orderDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.orderData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderDataBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.orderDataBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DataSet1";
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "WMS.Print.instory.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 12);
+            this.reportViewer1.Location = new System.Drawing.Point(9, 10);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1592, 788);
+            this.reportViewer1.Size = new System.Drawing.Size(1194, 631);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // orderData
-            // 
-            this.orderData.DataSetName = "OrderData";
-            this.orderData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // orderDataBindingSource
-            // 
-            this.orderDataBindingSource.DataSource = this.orderData;
-            this.orderDataBindingSource.Position = 0;
             // 
             // ReprtPrint
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1616, 812);
+            this.ClientSize = new System.Drawing.Size(1214, 650);
             this.Controls.Add(this.reportViewer1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ReprtPrint";
             this.Text = "ReprtPrint";
             this.Load += new System.EventHandler(this.ReprtPrint_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.orderData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderDataBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource orderDataBindingSource;
-        private DataSet.OrderData orderData;
     }
 }
