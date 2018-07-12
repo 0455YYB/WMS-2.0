@@ -134,6 +134,12 @@
     <Compile Include="storge\OrderInfo.Designer.cs">
       <DependentUpon>OrderInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="SystemSet\GoodsSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemSet\GoodsSet.Designer.cs">
+      <DependentUpon>GoodsSet.cs</DependentUpon>
+    </Compile>
     <Compile Include="SystemSet\SetMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     </Compile>
     <EmbeddedResource Include="storge\OrderInfo.resx">
       <DependentUpon>OrderInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemSet\GoodsSet.resx">
+      <DependentUpon>GoodsSet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SystemSet\SetMain.resx">
       <DependentUpon>SetMain.cs</DependentUpon>
