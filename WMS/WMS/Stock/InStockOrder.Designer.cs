@@ -382,7 +382,7 @@
             // 
             // CB_searchCode
             // 
-            this.CB_searchCode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.CB_searchCode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.CB_searchCode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CB_searchCode.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.CB_searchCode.FormattingEnabled = true;

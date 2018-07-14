@@ -65,18 +65,27 @@ namespace WMS.Stock
 
         private void TextChang(object sender,EventArgs e)
         {
-            string searchCode = CB_searchCode.Text;
-            //string selectSQL = @"select goods.code,goods.name,unit.name from goods,unit where goods.unit=unit.code and (goods.code like "+"'%"+"||"+@"@searchCode"+"||"+"%'" + " or goods.name like " +"'%"+"||"+@"@searchCode"+"||"+"%')";
-            string selectSQL = @"select goods.code,goods.name,unit.name from goods,unit where goods.unit=unit.code and (goods.code like '%1%' or goods.name like '%1%')" ;
+            
+            string searchCode = CB_searchCode.Text.Trim();
+            string selectSQL = @"select goods.code,goods.name,unit.name from goods,unit where goods.unit=unit.code and (goods.code like @searchCode  or goods.name like  @searchCode)";
+            
             SQLiteParameter[] sQLiteParameter = new SQLiteParameter[1];
-            sQLiteParameter[0] = new SQLiteParameter("@searchCode", searchCode);
+            sQLiteParameter[0] = new SQLiteParameter("@searchCode", "%"+searchCode+"%");
             DataTable goodsInfo;
             goodsInfo = sqlExecute.SelectInfo(sQLiteParameter, selectSQL);
-            CB_searchCode.DataSource = goodsInfo;
-            CB_searchCode.DisplayMember = "name";
-            CB_searchCode.ValueMember = "code";
-            this.CB_searchCode.DroppedDown =true;
-
+            int j = goodsInfo.Rows.Count;
+            CB_searchCode.Items.Clear();
+            if (j>0)
+            {
+                for (int a = 0; a < j; a++)
+                {
+                    CB_searchCode.Items.Add(goodsInfo.Rows[a]["code"]+"|" +goodsInfo.Rows[a]["name"]);
+                }
+            }
+            
+            //this.CB_searchCode.DroppedDown =true;
+            CB_searchCode.Focus();
+            CB_searchCode.Select(CB_searchCode.Text.Length, 0);
         }
     }
 }

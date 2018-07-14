@@ -128,6 +128,7 @@ namespace WMS.SystemSet
                     if(scusess==1)
                     {
                         MessageBox.Show("修改成功");
+                        LoadDGV_goods();
                     }
                     else
                     {
@@ -141,6 +142,7 @@ namespace WMS.SystemSet
                     if (scusess == 1)
                     {
                         MessageBox.Show("添加成功");
+                        LoadDGV_goods();
                     }
                     else
                     {
