@@ -32,9 +32,10 @@
             // 
             // OrderInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1310, 666);
+            this.ClientSize = new System.Drawing.Size(941, 550);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "OrderInfo";
             this.Text = "OrderInfo";
             this.ResumeLayout(false);
