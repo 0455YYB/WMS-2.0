@@ -9,16 +9,11 @@ using System.Windows.Forms;
 
 namespace WMS.SystemSet
 {
-    public partial class GoodsSet : Form
+    public partial class TypeSet : Form
     {
-        public GoodsSet()
+        public TypeSet()
         {
             InitializeComponent();
-        }
-
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
