@@ -146,6 +146,12 @@
     <Compile Include="SystemSet\SetMain.Designer.cs">
       <DependentUpon>SetMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="SystemSet\SupplierSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemSet\SupplierSet.Designer.cs">
+      <DependentUpon>SupplierSet.cs</DependentUpon>
+    </Compile>
     <Compile Include="SystemSet\TypeSet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SystemSet\SetMain.resx">
       <DependentUpon>SetMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemSet\SupplierSet.resx">
+      <DependentUpon>SupplierSet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SystemSet\TypeSet.resx">
       <DependentUpon>TypeSet.cs</DependentUpon>

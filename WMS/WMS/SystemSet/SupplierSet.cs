@@ -7,18 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace WMS.storge
+namespace WMS.SystemSet
 {
-    public partial class OrderInfo : Form
+    public partial class SupplierSet : Form
     {
-        public OrderInfo()
+        public SupplierSet()
         {
             InitializeComponent();
-        }
-
-        private void toolStripLabel1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
