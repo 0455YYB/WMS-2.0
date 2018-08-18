@@ -86,6 +86,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseClass\DepartmentInfo.cs" />
+    <Compile Include="BaseClass\GoodsInfo.cs" />
+    <Compile Include="BaseClass\SupplierInfo.cs" />
     <Compile Include="BaseClass\UserInfo.cs" />
     <Compile Include="DataSet\OrderData.cs">
       <DependentUpon>OrderData.xsd</DependentUpon>
@@ -128,11 +131,35 @@
     <Compile Include="SQLHelper\SetHelper.cs" />
     <Compile Include="SQLHelper\SQLHelper.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="storge\OrderInfo.cs">
+    <Compile Include="Stock\InStockOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="storge\OrderInfo.Designer.cs">
+    <Compile Include="Stock\InStockOrder.Designer.cs">
+      <DependentUpon>InStockOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\OrderInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\OrderInfo.Designer.cs">
       <DependentUpon>OrderInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\OutOrderInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\OutOrderInfo.Designer.cs">
+      <DependentUpon>OutOrderInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\OutStockOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\OutStockOrder.Designer.cs">
+      <DependentUpon>OutStockOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemSet\DepartmentSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemSet\DepartmentSet.Designer.cs">
+      <DependentUpon>DepartmentSet.cs</DependentUpon>
     </Compile>
     <Compile Include="SystemSet\GoodsSet.cs">
       <SubType>Form</SubType>
@@ -184,8 +211,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="storge\OrderInfo.resx">
+    <EmbeddedResource Include="Stock\InStockOrder.resx">
+      <DependentUpon>InStockOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\OrderInfo.resx">
       <DependentUpon>OrderInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\OutOrderInfo.resx">
+      <DependentUpon>OutOrderInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\OutStockOrder.resx">
+      <DependentUpon>OutStockOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemSet\DepartmentSet.resx">
+      <DependentUpon>DepartmentSet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SystemSet\GoodsSet.resx">
       <DependentUpon>GoodsSet.cs</DependentUpon>

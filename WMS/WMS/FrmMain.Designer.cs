@@ -39,6 +39,7 @@ namespace WMS
             this.系统管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.修改密码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Usermage = new System.Windows.Forms.ToolStripMenuItem();
+            this.类型管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,7 +78,8 @@ namespace WMS
             // 
             this.系统管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.修改密码ToolStripMenuItem,
-            this.Usermage});
+            this.Usermage,
+            this.类型管理ToolStripMenuItem});
             this.系统管理ToolStripMenuItem.Name = "系统管理ToolStripMenuItem";
             this.系统管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.系统管理ToolStripMenuItem.Text = "系统管理";
@@ -94,6 +96,13 @@ namespace WMS
             this.Usermage.Size = new System.Drawing.Size(180, 22);
             this.Usermage.Text = "用户管理";
             this.Usermage.Click += new System.EventHandler(this.Usermage_Click);
+            // 
+            // 类型管理ToolStripMenuItem
+            // 
+            this.类型管理ToolStripMenuItem.Name = "类型管理ToolStripMenuItem";
+            this.类型管理ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.类型管理ToolStripMenuItem.Text = "类型管理";
+            this.类型管理ToolStripMenuItem.Click += new System.EventHandler(this.类型管理ToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -123,6 +132,7 @@ namespace WMS
         private System.Windows.Forms.ToolStripMenuItem 系统管理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 修改密码ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Usermage;
+        private System.Windows.Forms.ToolStripMenuItem 类型管理ToolStripMenuItem;
     }
 }
 

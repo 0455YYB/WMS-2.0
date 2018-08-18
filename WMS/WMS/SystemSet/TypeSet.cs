@@ -11,9 +11,19 @@ namespace WMS.SystemSet
 {
     public partial class TypeSet : Form
     {
-        public TypeSet()
+        private static TypeSet ts = null;
+        private  TypeSet()
         {
             InitializeComponent();
+        }
+
+        public static TypeSet GetTypeSet()
+        {
+            if(ts==null||ts.IsDisposed)
+            {
+                ts = new TypeSet();
+            }
+            return ts;
         }
     }
 }
