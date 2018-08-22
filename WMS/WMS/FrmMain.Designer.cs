@@ -40,6 +40,12 @@ namespace WMS
             this.修改密码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Usermage = new System.Windows.Forms.ToolStripMenuItem();
             this.类型管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.物资字典维护ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.类型维护ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.部门维护ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.供应商维护ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.单位信息维护ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.用户维护ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +64,13 @@ namespace WMS
             // 
             // Dic_set
             // 
+            this.Dic_set.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.物资字典维护ToolStripMenuItem,
+            this.类型维护ToolStripMenuItem,
+            this.部门维护ToolStripMenuItem,
+            this.供应商维护ToolStripMenuItem,
+            this.单位信息维护ToolStripMenuItem,
+            this.用户维护ToolStripMenuItem});
             this.Dic_set.Name = "Dic_set";
             this.Dic_set.Size = new System.Drawing.Size(68, 21);
             this.Dic_set.Text = "字典维护";
@@ -87,22 +100,58 @@ namespace WMS
             // 修改密码ToolStripMenuItem
             // 
             this.修改密码ToolStripMenuItem.Name = "修改密码ToolStripMenuItem";
-            this.修改密码ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.修改密码ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.修改密码ToolStripMenuItem.Text = "修改密码";
             // 
             // Usermage
             // 
             this.Usermage.Name = "Usermage";
-            this.Usermage.Size = new System.Drawing.Size(180, 22);
+            this.Usermage.Size = new System.Drawing.Size(124, 22);
             this.Usermage.Text = "用户管理";
             this.Usermage.Click += new System.EventHandler(this.Usermage_Click);
             // 
             // 类型管理ToolStripMenuItem
             // 
             this.类型管理ToolStripMenuItem.Name = "类型管理ToolStripMenuItem";
-            this.类型管理ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.类型管理ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.类型管理ToolStripMenuItem.Text = "类型管理";
             this.类型管理ToolStripMenuItem.Click += new System.EventHandler(this.类型管理ToolStripMenuItem_Click);
+            // 
+            // 物资字典维护ToolStripMenuItem
+            // 
+            this.物资字典维护ToolStripMenuItem.Name = "物资字典维护ToolStripMenuItem";
+            this.物资字典维护ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.物资字典维护ToolStripMenuItem.Text = "物资字典维护";
+            // 
+            // 类型维护ToolStripMenuItem
+            // 
+            this.类型维护ToolStripMenuItem.Name = "类型维护ToolStripMenuItem";
+            this.类型维护ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.类型维护ToolStripMenuItem.Text = "类型维护";
+            // 
+            // 部门维护ToolStripMenuItem
+            // 
+            this.部门维护ToolStripMenuItem.Name = "部门维护ToolStripMenuItem";
+            this.部门维护ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.部门维护ToolStripMenuItem.Text = "部门维护";
+            // 
+            // 供应商维护ToolStripMenuItem
+            // 
+            this.供应商维护ToolStripMenuItem.Name = "供应商维护ToolStripMenuItem";
+            this.供应商维护ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.供应商维护ToolStripMenuItem.Text = "供应商维护";
+            // 
+            // 单位信息维护ToolStripMenuItem
+            // 
+            this.单位信息维护ToolStripMenuItem.Name = "单位信息维护ToolStripMenuItem";
+            this.单位信息维护ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.单位信息维护ToolStripMenuItem.Text = "单位信息维护";
+            // 
+            // 用户维护ToolStripMenuItem
+            // 
+            this.用户维护ToolStripMenuItem.Name = "用户维护ToolStripMenuItem";
+            this.用户维护ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.用户维护ToolStripMenuItem.Text = "用户维护";
             // 
             // FrmMain
             // 
@@ -133,6 +182,12 @@ namespace WMS
         private System.Windows.Forms.ToolStripMenuItem 修改密码ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Usermage;
         private System.Windows.Forms.ToolStripMenuItem 类型管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 物资字典维护ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 类型维护ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 部门维护ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 供应商维护ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 单位信息维护ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 用户维护ToolStripMenuItem;
     }
 }
 
