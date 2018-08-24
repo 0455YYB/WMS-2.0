@@ -11,9 +11,19 @@ namespace WMS.SystemSet
 {
     public partial class UnitSet : Form
     {
-        public UnitSet()
+        private static UnitSet us = null;
+        private UnitSet()
         {
             InitializeComponent();
+        }
+
+        public static UnitSet GetUnitSet()
+        {
+            if(us==null||us.IsDisposed)
+            {
+                us = new UnitSet();
+            }
+            return us;
         }
     }
 }

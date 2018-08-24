@@ -121,3 +121,5 @@ E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.SystemSet.GoodsSet.resources
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.SystemSet.SetMain.resources
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.SystemSet.SupplierSet.resources
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.SystemSet.TypeSet.resources
+E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.SystemSet.OrganizationSet.resources
+E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.SystemSet.UnitSet.resources

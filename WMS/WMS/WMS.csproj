@@ -137,11 +137,11 @@
     <Compile Include="Stock\InStockOrder.Designer.cs">
       <DependentUpon>InStockOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Stock\OrderInfo.cs">
+    <Compile Include="Stock\InOrderInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Stock\OrderInfo.Designer.cs">
-      <DependentUpon>OrderInfo.cs</DependentUpon>
+    <Compile Include="Stock\InOrderInfo.Designer.cs">
+      <DependentUpon>InOrderInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Stock\OutOrderInfo.cs">
       <SubType>Form</SubType>
@@ -166,6 +166,12 @@
     </Compile>
     <Compile Include="SystemSet\GoodsSet.Designer.cs">
       <DependentUpon>GoodsSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemSet\OrganizationSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemSet\OrganizationSet.Designer.cs">
+      <DependentUpon>OrganizationSet.cs</DependentUpon>
     </Compile>
     <Compile Include="SystemSet\SetMain.cs">
       <SubType>Form</SubType>
@@ -220,8 +226,8 @@
     <EmbeddedResource Include="Stock\InStockOrder.resx">
       <DependentUpon>InStockOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Stock\OrderInfo.resx">
-      <DependentUpon>OrderInfo.cs</DependentUpon>
+    <EmbeddedResource Include="Stock\InOrderInfo.resx">
+      <DependentUpon>InOrderInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stock\OutOrderInfo.resx">
       <DependentUpon>OutOrderInfo.cs</DependentUpon>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SystemSet\GoodsSet.resx">
       <DependentUpon>GoodsSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemSet\OrganizationSet.resx">
+      <DependentUpon>OrganizationSet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SystemSet\SetMain.resx">
       <DependentUpon>SetMain.cs</DependentUpon>

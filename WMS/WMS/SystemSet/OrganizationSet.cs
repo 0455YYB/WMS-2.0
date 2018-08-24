@@ -9,21 +9,22 @@ using System.Windows.Forms;
 
 namespace WMS.SystemSet
 {
-    public partial class DepartmentSet : Form
+    public partial class OrganizationSet : Form
     {
-        private static DepartmentSet ds = null;
-        private  DepartmentSet()
+        private static OrganizationSet os = null;
+        private OrganizationSet()
         {
             InitializeComponent();
         }
 
-        public static DepartmentSet GetDepartmentSet()
+        public static OrganizationSet GetOrganizationSet()
         {
-            if(ds==null||ds.IsDisposed)
+            if(os==null||os.IsDisposed)
             {
-                ds = new DepartmentSet();
+                os = new OrganizationSet();
             }
-            return ds;
+            return os;
         }
+
     }
 }
