@@ -30,23 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DepartmentSet));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.TSB_add = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.TSB_edit = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.TSB_save = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.TSB_cancel = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.TSB_delete = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.TB_code = new System.Windows.Forms.TextBox();
+            this.TB_name = new System.Windows.Forms.TextBox();
+            this.CB_stop = new System.Windows.Forms.ComboBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -54,83 +53,83 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
+            this.TSB_add,
             this.toolStripSeparator1,
-            this.toolStripButton2,
+            this.TSB_edit,
             this.toolStripSeparator2,
-            this.toolStripButton3,
+            this.TSB_save,
             this.toolStripSeparator3,
-            this.toolStripButton4,
+            this.TSB_cancel,
             this.toolStripSeparator4,
-            this.toolStripButton5});
+            this.TSB_delete});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(431, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // TSB_add
             // 
-            this.toolStripButton1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(62, 22);
-            this.toolStripButton1.Text = "添 加";
+            this.TSB_add.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TSB_add.Image = ((System.Drawing.Image)(resources.GetObject("TSB_add.Image")));
+            this.TSB_add.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_add.Name = "TSB_add";
+            this.TSB_add.Size = new System.Drawing.Size(62, 22);
+            this.TSB_add.Text = "添 加";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton2
+            // TSB_edit
             // 
-            this.toolStripButton2.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(62, 22);
-            this.toolStripButton2.Text = "修 改";
+            this.TSB_edit.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TSB_edit.Image = ((System.Drawing.Image)(resources.GetObject("TSB_edit.Image")));
+            this.TSB_edit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_edit.Name = "TSB_edit";
+            this.TSB_edit.Size = new System.Drawing.Size(62, 22);
+            this.TSB_edit.Text = "修 改";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton3
+            // TSB_save
             // 
-            this.toolStripButton3.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(62, 22);
-            this.toolStripButton3.Text = "保 存";
+            this.TSB_save.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TSB_save.Image = ((System.Drawing.Image)(resources.GetObject("TSB_save.Image")));
+            this.TSB_save.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_save.Name = "TSB_save";
+            this.TSB_save.Size = new System.Drawing.Size(62, 22);
+            this.TSB_save.Text = "保 存";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton4
+            // TSB_cancel
             // 
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(56, 22);
-            this.toolStripButton4.Text = "取 消";
+            this.TSB_cancel.Image = ((System.Drawing.Image)(resources.GetObject("TSB_cancel.Image")));
+            this.TSB_cancel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_cancel.Name = "TSB_cancel";
+            this.TSB_cancel.Size = new System.Drawing.Size(56, 22);
+            this.TSB_cancel.Text = "取 消";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton5
+            // TSB_delete
             // 
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(56, 22);
-            this.toolStripButton5.Text = "删 除";
+            this.TSB_delete.Image = ((System.Drawing.Image)(resources.GetObject("TSB_delete.Image")));
+            this.TSB_delete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_delete.Name = "TSB_delete";
+            this.TSB_delete.Size = new System.Drawing.Size(56, 22);
+            this.TSB_delete.Text = "删 除";
             // 
             // dataGridView1
             // 
@@ -138,20 +137,12 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
             this.dataGridView1.Location = new System.Drawing.Point(10, 33);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(154, 413);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "科室名称";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
             // 
             // label1
             // 
@@ -180,36 +171,37 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "停 用：";
             // 
-            // textBox1
+            // TB_code
             // 
-            this.textBox1.Location = new System.Drawing.Point(243, 90);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 5;
+            this.TB_code.Location = new System.Drawing.Point(243, 90);
+            this.TB_code.Name = "TB_code";
+            this.TB_code.Size = new System.Drawing.Size(100, 23);
+            this.TB_code.TabIndex = 5;
             // 
-            // textBox2
+            // TB_name
             // 
-            this.textBox2.Location = new System.Drawing.Point(243, 155);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(176, 23);
-            this.textBox2.TabIndex = 6;
+            this.TB_name.Location = new System.Drawing.Point(243, 155);
+            this.TB_name.Name = "TB_name";
+            this.TB_name.Size = new System.Drawing.Size(176, 23);
+            this.TB_name.TabIndex = 6;
             // 
-            // comboBox1
+            // CB_stop
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(243, 215);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(72, 22);
-            this.comboBox1.TabIndex = 7;
+            this.CB_stop.DisplayMember = "1";
+            this.CB_stop.FormattingEnabled = true;
+            this.CB_stop.Location = new System.Drawing.Point(243, 215);
+            this.CB_stop.Name = "CB_stop";
+            this.CB_stop.Size = new System.Drawing.Size(72, 22);
+            this.CB_stop.TabIndex = 7;
             // 
             // DepartmentSet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(431, 449);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.CB_stop);
+            this.Controls.Add(this.TB_name);
+            this.Controls.Add(this.TB_code);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -229,22 +221,21 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton TSB_add;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton TSB_edit;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton TSB_save;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripButton TSB_cancel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripButton TSB_delete;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox TB_code;
+        private System.Windows.Forms.TextBox TB_name;
+        private System.Windows.Forms.ComboBox CB_stop;
     }
 }
