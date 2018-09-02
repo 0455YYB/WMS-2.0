@@ -123,3 +123,14 @@ E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.SystemSet.SupplierSet.resources
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.SystemSet.TypeSet.resources
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.SystemSet.OrganizationSet.resources
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.SystemSet.UnitSet.resources
+D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.csprojResolveAssemblyReference.cache
+D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.storge.InStockOrder.resources
+D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.Stock.OutOrderInfo.resources
+D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.Stock.OutStockOrder.resources
+D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.SystemSet.DepartmentSet.resources
+D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.SystemSet.GoodsSet.resources
+D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.SystemSet.OrganizationSet.resources
+D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.SystemSet.SetMain.resources
+D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.SystemSet.SupplierSet.resources
+D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.SystemSet.TypeSet.resources
+D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.SystemSet.UnitSet.resources
