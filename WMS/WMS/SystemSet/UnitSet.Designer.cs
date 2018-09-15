@@ -40,16 +40,14 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.TSB_delete = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGV_unit = new System.Windows.Forms.DataGridView();
             this.TB_name = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TB_code = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_unit)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -143,7 +141,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.DGV_unit);
             this.groupBox1.Controls.Add(this.TB_name);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.TB_code);
@@ -155,33 +153,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "单位信息";
             // 
-            // dataGridView1
+            // DGV_unit
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
-            this.dataGridView1.Location = new System.Drawing.Point(7, 157);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(289, 321);
-            this.dataGridView1.TabIndex = 6;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "编号";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "名称";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.DGV_unit.AllowUserToAddRows = false;
+            this.DGV_unit.AllowUserToDeleteRows = false;
+            this.DGV_unit.AllowUserToOrderColumns = true;
+            this.DGV_unit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_unit.Location = new System.Drawing.Point(7, 157);
+            this.DGV_unit.Name = "DGV_unit";
+            this.DGV_unit.ReadOnly = true;
+            this.DGV_unit.RowTemplate.Height = 23;
+            this.DGV_unit.Size = new System.Drawing.Size(289, 321);
+            this.DGV_unit.TabIndex = 6;
+            this.DGV_unit.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_unit_CellClick);
             // 
             // TB_name
             // 
@@ -229,7 +213,7 @@
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_unit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,9 +233,7 @@
         private System.Windows.Forms.ToolStripButton TSB_delete;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridView DGV_unit;
         private System.Windows.Forms.TextBox TB_name;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TB_code;

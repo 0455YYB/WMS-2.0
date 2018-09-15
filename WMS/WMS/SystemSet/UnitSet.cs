@@ -18,6 +18,8 @@ namespace WMS.SystemSet
         private UnitSet()
         {
             InitializeComponent();
+            LoadDGV_unit();
+            SetUnable();
         }
 
         public static UnitSet GetUnitSet()
@@ -89,6 +91,7 @@ namespace WMS.SystemSet
             if(result==1)
             {
                 MessageBox.Show("保存成功");
+                LoadDGV_unit();
             }
             else
             {
@@ -105,15 +108,36 @@ namespace WMS.SystemSet
 
         private void TSB_delete_Click(object sender, EventArgs e)
         {
-
+            int rowsNumber = DGV_unit.CurrentRow.Index;
+            string unitCode = DGV_unit.Rows[rowsNumber].Cells[0].Value.ToString().Trim();
+            string deleteUnit = @"delete from unit where code=@unitCode";
+            SQLiteParameter[] sQLiteParameter = new SQLiteParameter[1];
+            sQLiteParameter[0] = new SQLiteParameter("@unitCode", unitCode);
+            int result = SqlExecute.Execute(sQLiteParameter, deleteUnit);
+            LoadDGV_unit();
         }
         #endregion
 
+        #region 初始化加载全部单位
         private void LoadDGV_unit()
         {
             string selectUnit = @"select code '编号',name '名称' from unit where status=0 order by code desc";
             DataTable unitInfo = null;
             unitInfo = SqlExecute.LoadInfo(selectUnit);
+            DGV_unit.DataSource = unitInfo;
+            
+        }
+        #endregion
+
+        private void DGV_unit_CellClick(object sender,DataGridViewCellEventArgs e)
+        {
+            int rowsNumber = DGV_unit.CurrentRow.Index;
+
+            string unitCode = DGV_unit.Rows[rowsNumber].Cells[0].Value.ToString().Trim();
+            string unitName = DGV_unit.Rows[rowsNumber].Cells[1].Value.ToString().Trim();
+
+            TB_code.Text = unitCode;
+            TB_name.Text = unitName;
         }
     }
 }

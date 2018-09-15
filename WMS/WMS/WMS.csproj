@@ -86,6 +86,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseClass\BaseMethod.cs" />
     <Compile Include="BaseClass\DepartmentInfo.cs" />
     <Compile Include="BaseClass\GoodsInfo.cs" />
     <Compile Include="BaseClass\SupplierInfo.cs" />

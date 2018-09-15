@@ -188,6 +188,7 @@
             this.DGV_type.RowTemplate.Height = 23;
             this.DGV_type.Size = new System.Drawing.Size(404, 322);
             this.DGV_type.TabIndex = 7;
+            this.DGV_type.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LoadDGV_type_CellClick);
             // 
             // TypeSet
             // 

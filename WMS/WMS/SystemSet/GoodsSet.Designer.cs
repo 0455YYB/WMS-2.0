@@ -47,15 +47,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TB_code = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.GoodsInfo = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGV_goods = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.TSB_add = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -76,7 +68,7 @@
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.TSB_search = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GoodsInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_goods)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,7 +91,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.TB_code);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.GoodsInfo);
+            this.groupBox1.Controls.Add(this.DGV_goods);
             this.groupBox1.Location = new System.Drawing.Point(8, 38);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(859, 542);
@@ -127,12 +119,12 @@
             // 
             // CB_stop
             // 
+            this.CB_stop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_stop.FormattingEnabled = true;
             this.CB_stop.Location = new System.Drawing.Point(358, 165);
             this.CB_stop.Name = "CB_stop";
             this.CB_stop.Size = new System.Drawing.Size(121, 20);
             this.CB_stop.TabIndex = 20;
-            this.CB_stop.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -163,6 +155,7 @@
             // 
             // CB_type
             // 
+            this.CB_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_type.FormattingEnabled = true;
             this.CB_type.Location = new System.Drawing.Point(358, 76);
             this.CB_type.Name = "CB_type";
@@ -181,6 +174,7 @@
             // 
             // CB_supplier
             // 
+            this.CB_supplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_supplier.FormattingEnabled = true;
             this.CB_supplier.Location = new System.Drawing.Point(358, 119);
             this.CB_supplier.Name = "CB_supplier";
@@ -261,75 +255,19 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "编码";
             // 
-            // GoodsInfo
+            // DGV_goods
             // 
-            this.GoodsInfo.AllowUserToAddRows = false;
-            this.GoodsInfo.AllowUserToDeleteRows = false;
-            this.GoodsInfo.AllowUserToOrderColumns = true;
-            this.GoodsInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GoodsInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8});
-            this.GoodsInfo.Location = new System.Drawing.Point(0, 220);
-            this.GoodsInfo.Name = "GoodsInfo";
-            this.GoodsInfo.ReadOnly = true;
-            this.GoodsInfo.RowTemplate.Height = 23;
-            this.GoodsInfo.Size = new System.Drawing.Size(845, 316);
-            this.GoodsInfo.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "编号";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "名称";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "规格";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "单位";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "单价";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "供应商";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "类型";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "停用";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
+            this.DGV_goods.AllowUserToAddRows = false;
+            this.DGV_goods.AllowUserToDeleteRows = false;
+            this.DGV_goods.AllowUserToOrderColumns = true;
+            this.DGV_goods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_goods.Location = new System.Drawing.Point(0, 220);
+            this.DGV_goods.Name = "DGV_goods";
+            this.DGV_goods.ReadOnly = true;
+            this.DGV_goods.RowTemplate.Height = 23;
+            this.DGV_goods.Size = new System.Drawing.Size(845, 316);
+            this.DGV_goods.TabIndex = 0;
+            this.DGV_goods.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_goods_CellClick);
             // 
             // toolStrip1
             // 
@@ -480,11 +418,12 @@
             this.ClientSize = new System.Drawing.Size(861, 587);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GoodsSet";
             this.Text = "物资信息维护";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GoodsInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_goods)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -495,7 +434,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView GoodsInfo;
+        private System.Windows.Forms.DataGridView DGV_goods;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -511,14 +450,6 @@
         private System.Windows.Forms.ComboBox CB_type;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox CB_supplier;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton TSB_add;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;

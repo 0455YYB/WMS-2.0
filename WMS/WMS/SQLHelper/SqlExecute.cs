@@ -49,7 +49,7 @@ namespace WMS.SQLHelper
                 sqliteCom.CommandText = sqlString;
                 sqliteCom.Parameters.AddWithValue(parameterName, code);
                 sqliteCon.Open();
-                if(sqliteCom.ExecuteScalar().ToString()==null)
+                if(sqliteCom.ExecuteScalar()==null)
                 {
                     return status;
                 }
@@ -89,7 +89,6 @@ namespace WMS.SQLHelper
                 sqliteCom.Connection = sqliteCon;
                 sqliteCon.Open();
                 result= sqliteCom.ExecuteNonQuery();
-                result += 1;
             }
             catch(Exception e)
             {
@@ -114,7 +113,7 @@ namespace WMS.SQLHelper
                 sqliteCom.Connection = sqliteCon;
                 sqliteCon.Open();
                 result = sqliteCom.ExecuteNonQuery();
-                result += 1;
+                
             }
             catch (Exception e)
             {
@@ -164,6 +163,30 @@ namespace WMS.SQLHelper
         {
             int success = 0;
             return success;
+        }
+
+        public DataTable SelectInfo(SQLiteParameter[] sQLiteParameters,string sqlString)
+        {
+            DataTable dataTable = new DataTable();
+            SQLiteDataAdapter sQLiteDataAdapter;
+            try
+            {
+                sqliteCom.CommandText = sqlString;
+                sqliteCom.Connection = sqliteCon;
+                sqliteCom.Parameters.AddRange(sQLiteParameters);
+                sQLiteDataAdapter = new SQLiteDataAdapter(sqliteCom);
+                sQLiteDataAdapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch(Exception e)
+            {
+                return dataTable = null;
+            }
+            finally
+            {
+                sqliteCon.Close();
+            }
+            
         }
     }
 }

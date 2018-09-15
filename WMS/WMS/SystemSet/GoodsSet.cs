@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using WMS.SQLHelper;
+using WMS.BaseClass;
 using System.Data.SQLite;
 
 namespace WMS.SystemSet
@@ -27,6 +28,8 @@ namespace WMS.SystemSet
             LoadUnit(CB_unit,selectUnit);
             LoadUnit(CB_type,selectType);
             LoadUnit(CB_supplier,selectSupplier);
+            BaseMethod.LoadStop(this.CB_stop);
+            LoadDGV_goods();
         }
 
         public static GoodsSet GetGoodsSet()
@@ -36,11 +39,6 @@ namespace WMS.SystemSet
                 gs = new GoodsSet();
             }
             return gs;
-        }
-
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void SetEnable()
@@ -106,7 +104,7 @@ namespace WMS.SystemSet
             goodsInfo.goodsSupplier = CB_supplier.SelectedValue.ToString().Trim();
             goodsInfo.goodsStop = int.Parse(CB_stop.SelectedValue.ToString().Trim());
 
-            SQLiteParameter[] sQLiteParameters = new SQLiteParameter[10];
+            SQLiteParameter[] sQLiteParameters = new SQLiteParameter[8];
             sQLiteParameters[0] = new SQLiteParameter("@goodsCode", goodsInfo.goodsCode);
             sQLiteParameters[1] = new SQLiteParameter("@goodsName", goodsInfo.goodsName);
             sQLiteParameters[2] = new SQLiteParameter("@goodsSpec", goodsInfo.goodsSpec);
@@ -117,26 +115,38 @@ namespace WMS.SystemSet
             sQLiteParameters[7] = new SQLiteParameter("@goodsStop", goodsInfo.goodsStop);
 
 
-            string ExistCode = @"select t.code from t goods where t.code=@goodsCode";
+            string ExistCode = @"select t.code from  goods t where t.code=@goodsCode";
             int status= sqlExecute.SelectCode(goodsInfo.goodsCode, "@goodsCode", ExistCode);
             int scusess;
             string saveGoodsSql = "";
-            if (status==1)
+            switch(status)
             {
-                 saveGoodsSql = @"update goods set name=@goodsName,unit=@goodsUnit,price=@goodsPrice" +
-                                       "supplier=@goodsPrice,type=@goodsType,supplier=@goodsSupplier,status=@goodsStop,createdate=datetime('now') where code=@goodsCode";
-                scusess = sqlExecute.SaveGoods(goodsInfo.goodsCode, sQLiteParameters, saveGoodsSql);
-                if (scusess == 1)
-                {
-                    MessageBox.Show("更新失败","提示");
-                }
-                MessageBox.Show("更新成功");        
-            }
-            else
-            {
-                saveGoodsSql = @"insert into goods(code,name,unit,price,shengchan,supplier,spec,status,createdate,type)" +
-                   "values('@goodsCode','@goodsName','@goodsUnit','@goodsPrice',' ','@goodsSupplier','@goodsSpec',@goodsStop,datetime('now'),'@goodsType')";
-                scusess = sqlExecute.SaveGoods(goodsInfo.goodsCode, sQLiteParameters, saveGoodsSql);
+                case 0:
+                    saveGoodsSql = @"insert into goods(code,name,unit,price,shengchan,supplier,spec,status,createdate,type)" +
+                    "values(@goodsCode,@goodsName,@goodsUnit,@goodsPrice,' ',@goodsSupplier,@goodsSpec,@goodsStop,datetime('now'),@goodsType)";
+                    scusess = sqlExecute.SaveGoods(goodsInfo.goodsCode, sQLiteParameters, saveGoodsSql);
+                    if(scusess==1)
+                    {
+                        MessageBox.Show("修改成功");
+                    }
+                    else
+                    {
+                        MessageBox.Show("修改失败，");
+                    }
+                    break;
+                case 1:
+                    saveGoodsSql = @"update goods set name=@goodsName,unit=@goodsUnit,price=@goodsPrice" +
+                                   "supplier=@goodsPrice,type=@goodsType,supplier=@goodsSupplier,status=@goodsStop,createdate=datetime('now') where code=@goodsCode";
+                    scusess = sqlExecute.SaveGoods(goodsInfo.goodsCode, sQLiteParameters, saveGoodsSql);
+                    if (scusess == 1)
+                    {
+                        MessageBox.Show("添加成功");
+                    }
+                    else
+                    {
+                        MessageBox.Show("添加失败，");
+                    }
+                    break;
             }
 
         }
@@ -148,7 +158,7 @@ namespace WMS.SystemSet
 
         private void TSB_delete_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         /// <summary>
@@ -165,5 +175,37 @@ namespace WMS.SystemSet
                 cb_B.DataSource = dt;   
             }
         }
+
+        private void LoadDGV_goods()
+        {
+            string selectGoods = @"select a.code '编号',a.name '名称',a.spec '规格',c.name '单位',a.price '价格',b.name '类型',d.name '供应商',
+                                 a.status '停用' from goods a,type b,unit c,supplier d where a.type=b.code and a.unit=c.code and a.supplier=d.code";
+            DataTable goodsInfo = sqlExecute.LoadInfo(selectGoods);
+            DGV_goods.DataSource = goodsInfo;
+        }
+
+        private void DGV_goods_CellClick(object sender,DataGridViewCellEventArgs e)
+        {
+            int rowsNumber = DGV_goods.CurrentRow.Index;
+            string code = DGV_goods.Rows[rowsNumber].Cells[0].Value.ToString();
+            string selectString = @"select code,name,spec,unit,price,type,supplier,status from goods where code=@code";
+            SQLiteParameter[] sQLiteParameters = new SQLiteParameter[1];
+            sQLiteParameters[0] = new SQLiteParameter("@code",code);
+
+            DataTable dt = sqlExecute.SelectInfo(sQLiteParameters, selectString);
+            if (dt!=null)
+            {
+                TB_code.Text = dt.Rows[0][0].ToString();
+                TB_name.Text = dt.Rows[0][1].ToString();
+                TB_spec.Text = dt.Rows[0][2].ToString();
+                CB_unit.SelectedValue = dt.Rows[0][3].ToString();
+                TB_price.Text = dt.Rows[0][4].ToString();
+                CB_type.SelectedValue = dt.Rows[0][5].ToString();
+                CB_supplier.SelectedValue = dt.Rows[0][6].ToString();
+                CB_stop.SelectedValue = dt.Rows[0][7].ToString();
+            }
+        }
+
+
     }
 }

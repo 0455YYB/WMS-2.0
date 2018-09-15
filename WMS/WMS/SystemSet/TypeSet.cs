@@ -139,6 +139,17 @@ namespace WMS.SystemSet
         }
         #endregion
 
+        private void LoadDGV_type_CellClick(object sender,DataGridViewCellEventArgs e)
+        {
+            int rowsNumber = DGV_type.CurrentRow.Index;
+
+            string typeCode = DGV_type.Rows[rowsNumber].Cells[0].Value.ToString();
+            string typeName = DGV_type.Rows[rowsNumber].Cells[1].Value.ToString();
+
+            TB_code.Text = typeCode;
+            TB_name.Text = typeName;
+        }
+
 
     }
 }
