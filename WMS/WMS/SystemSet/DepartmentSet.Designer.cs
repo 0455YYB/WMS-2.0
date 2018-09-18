@@ -39,13 +39,13 @@
             this.TSB_cancel = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.TSB_delete = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGC_department = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TB_code = new System.Windows.Forms.TextBox();
             this.TB_name = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGC_department)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -63,7 +63,7 @@
             this.TSB_delete});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(431, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(559, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -135,23 +135,23 @@
             this.TSB_delete.Text = "删 除";
             this.TSB_delete.Click += new System.EventHandler(this.TSB_delete_Click);
             // 
-            // dataGridView1
+            // DGC_department
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 33);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(154, 413);
-            this.dataGridView1.TabIndex = 1;
+            this.DGC_department.AllowUserToAddRows = false;
+            this.DGC_department.AllowUserToDeleteRows = false;
+            this.DGC_department.AllowUserToOrderColumns = true;
+            this.DGC_department.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGC_department.Location = new System.Drawing.Point(10, 33);
+            this.DGC_department.Name = "DGC_department";
+            this.DGC_department.ReadOnly = true;
+            this.DGC_department.RowTemplate.Height = 23;
+            this.DGC_department.Size = new System.Drawing.Size(238, 413);
+            this.DGC_department.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(171, 96);
+            this.label1.Location = new System.Drawing.Point(269, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 14);
             this.label1.TabIndex = 2;
@@ -160,7 +160,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(174, 158);
+            this.label2.Location = new System.Drawing.Point(272, 158);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 14);
             this.label2.TabIndex = 3;
@@ -168,28 +168,28 @@
             // 
             // TB_code
             // 
-            this.TB_code.Location = new System.Drawing.Point(243, 90);
+            this.TB_code.Location = new System.Drawing.Point(341, 90);
             this.TB_code.Name = "TB_code";
-            this.TB_code.Size = new System.Drawing.Size(100, 23);
+            this.TB_code.Size = new System.Drawing.Size(131, 23);
             this.TB_code.TabIndex = 5;
             // 
             // TB_name
             // 
-            this.TB_name.Location = new System.Drawing.Point(243, 155);
+            this.TB_name.Location = new System.Drawing.Point(341, 155);
             this.TB_name.Name = "TB_name";
-            this.TB_name.Size = new System.Drawing.Size(176, 23);
+            this.TB_name.Size = new System.Drawing.Size(131, 23);
             this.TB_name.TabIndex = 6;
             // 
             // DepartmentSet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(431, 449);
+            this.ClientSize = new System.Drawing.Size(559, 449);
             this.Controls.Add(this.TB_name);
             this.Controls.Add(this.TB_code);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGC_department);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -197,7 +197,7 @@
             this.Text = "部门维护";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGC_department)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,7 +215,7 @@
         private System.Windows.Forms.ToolStripButton TSB_cancel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton TSB_delete;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGC_department;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TB_code;

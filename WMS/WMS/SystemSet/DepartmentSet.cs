@@ -107,7 +107,21 @@ namespace WMS.SystemSet
 
         private void TSB_delete_Click(object sender, EventArgs e)
         {
-
+            int rowsNumber = DGC_department.CurrentRow.Index;
+            string code = DGC_department.Rows[rowsNumber].Cells[0].Value.ToString();
+            SQLiteParameter[] sQLiteParameters = new SQLiteParameter[1];
+            sQLiteParameters[0] = new SQLiteParameter("@code", code);
+            string deleteString = @"delete from department where code=@code";
+            int result = SqlExecute.Execute(sQLiteParameters, deleteString);
+            switch(result)
+            {
+                case 0:
+                    MessageBox.Show("删除失败");
+                    break;
+                case 1:
+                    MessageBox.Show("删除成功");
+                    break;
+            }
         }
         #endregion 
     }
