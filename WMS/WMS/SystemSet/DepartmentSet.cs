@@ -19,6 +19,7 @@ namespace WMS.SystemSet
         private  DepartmentSet()
         {
             InitializeComponent();
+            LoadDGV_department();
         }
 
         public static DepartmentSet GetDepartmentSet()
@@ -98,6 +99,7 @@ namespace WMS.SystemSet
                     MessageBox.Show("保存成功");
                     break;
             }
+            LoadDGV_department();
         }
 
         private void TSB_cancel_Click(object sender, EventArgs e)
@@ -107,8 +109,8 @@ namespace WMS.SystemSet
 
         private void TSB_delete_Click(object sender, EventArgs e)
         {
-            int rowsNumber = DGC_department.CurrentRow.Index;
-            string code = DGC_department.Rows[rowsNumber].Cells[0].Value.ToString();
+            int rowsNumber = DGV_department.CurrentRow.Index;
+            string code = DGV_department.Rows[rowsNumber].Cells[0].Value.ToString();
             SQLiteParameter[] sQLiteParameters = new SQLiteParameter[1];
             sQLiteParameters[0] = new SQLiteParameter("@code", code);
             string deleteString = @"delete from department where code=@code";
@@ -122,7 +124,26 @@ namespace WMS.SystemSet
                     MessageBox.Show("删除成功");
                     break;
             }
+            LoadDGV_department();
         }
         #endregion 
+
+        private void LoadDGV_department()
+        {
+            string loadSQLString = @"select code,name from department where status=0";
+            DataTable dataTable;
+            dataTable = SqlExecute.LoadInfo(loadSQLString);
+            DGV_department.DataSource = dataTable;
+        }
+
+        private void DGV_departmentCell_Click(object sender,DataGridViewCellEventArgs e)
+        {
+            int rowsNumber = DGV_department.CurrentRow.Index;
+            string code = DGV_department.Rows[rowsNumber].Cells[0].Value.ToString();
+            string name = DGV_department.Rows[rowsNumber].Cells[1].Value.ToString();
+
+            TB_code.Text = code;
+            TB_name.Text = name;
+        }
     }
 }

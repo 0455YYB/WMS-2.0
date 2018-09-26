@@ -39,13 +39,13 @@
             this.TSB_cancel = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.TSB_delete = new System.Windows.Forms.ToolStripButton();
-            this.DGC_department = new System.Windows.Forms.DataGridView();
+            this.DGV_department = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TB_code = new System.Windows.Forms.TextBox();
             this.TB_name = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGC_department)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_department)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -135,18 +135,19 @@
             this.TSB_delete.Text = "删 除";
             this.TSB_delete.Click += new System.EventHandler(this.TSB_delete_Click);
             // 
-            // DGC_department
+            // DGV_department
             // 
-            this.DGC_department.AllowUserToAddRows = false;
-            this.DGC_department.AllowUserToDeleteRows = false;
-            this.DGC_department.AllowUserToOrderColumns = true;
-            this.DGC_department.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGC_department.Location = new System.Drawing.Point(10, 33);
-            this.DGC_department.Name = "DGC_department";
-            this.DGC_department.ReadOnly = true;
-            this.DGC_department.RowTemplate.Height = 23;
-            this.DGC_department.Size = new System.Drawing.Size(238, 413);
-            this.DGC_department.TabIndex = 1;
+            this.DGV_department.AllowUserToAddRows = false;
+            this.DGV_department.AllowUserToDeleteRows = false;
+            this.DGV_department.AllowUserToOrderColumns = true;
+            this.DGV_department.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_department.Location = new System.Drawing.Point(10, 33);
+            this.DGV_department.Name = "DGV_department";
+            this.DGV_department.ReadOnly = true;
+            this.DGV_department.RowTemplate.Height = 23;
+            this.DGV_department.Size = new System.Drawing.Size(238, 413);
+            this.DGV_department.TabIndex = 1;
+            this.DGV_department.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_departmentCell_Click);
             // 
             // label1
             // 
@@ -168,6 +169,7 @@
             // 
             // TB_code
             // 
+            this.TB_code.Enabled = false;
             this.TB_code.Location = new System.Drawing.Point(341, 90);
             this.TB_code.Name = "TB_code";
             this.TB_code.Size = new System.Drawing.Size(131, 23);
@@ -175,6 +177,7 @@
             // 
             // TB_name
             // 
+            this.TB_name.Enabled = false;
             this.TB_name.Location = new System.Drawing.Point(341, 155);
             this.TB_name.Name = "TB_name";
             this.TB_name.Size = new System.Drawing.Size(131, 23);
@@ -189,7 +192,7 @@
             this.Controls.Add(this.TB_code);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.DGC_department);
+            this.Controls.Add(this.DGV_department);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -197,7 +200,7 @@
             this.Text = "部门维护";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGC_department)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_department)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,7 +218,7 @@
         private System.Windows.Forms.ToolStripButton TSB_cancel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton TSB_delete;
-        private System.Windows.Forms.DataGridView DGC_department;
+        private System.Windows.Forms.DataGridView DGV_department;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TB_code;
