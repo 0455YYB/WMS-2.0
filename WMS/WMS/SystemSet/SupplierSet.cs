@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using WMS.SQLHelper;
+using System.Data.SQLite;
 
 namespace WMS.SystemSet
 {
@@ -33,27 +34,68 @@ namespace WMS.SystemSet
         #region 导航栏
         private void TSB_add_Click(object sender, EventArgs e)
         {
-
+            SetEnable();
+            ClearText();
         }
 
         private void TSB_edit_Click(object sender, EventArgs e)
         {
-
+            SetEnable();
         }
 
         private void TSB_save_Click(object sender, EventArgs e)
         {
-
+            string code = TB_code.Text.Trim();
+            string name = TB_name.Text.Trim();
+            SQLiteParameter[] sQLiteParameter = new SQLiteParameter[2];
+            sQLiteParameter[0] = new SQLiteParameter("@code", code);
+            sQLiteParameter[1] = new SQLiteParameter("@name", name);
+            string selectSQL = @"select code from supplier where code=@code";
+            int selectCode = SqlExecute.SelectCode(code, "@code", selectSQL);
+            string saveSQL = string.Empty; 
+            switch(selectCode)
+            {
+                case 0:
+                    saveSQL = @"insert into supplier(code,name) values(@code,@name)";
+                    break;
+                case 1:
+                    saveSQL = @"update supplier set code=@code,name=@name where code=@code";
+                    break;
+            }
+            int result = SqlExecute.Execute(sQLiteParameter,saveSQL);
+            switch(result)
+            {
+                case 0:
+                    MessageBox.Show("保存失败");
+                    break;
+                case 1:
+                    MessageBox.Show("保存成功");
+                    break;
+            }
         }
 
         private void TSB_cancel_Click(object sender, EventArgs e)
         {
-
+            SetUnable();
         }
 
         private void TSB_delete_Click(object sender, EventArgs e)
         {
-
+            int rowsNmber = DGV_supplier.CurrentRow.Index;
+            string code = DGV_supplier.Rows[rowsNmber].Cells[0].Value.ToString().Trim();
+            string deleteSQL = @"delete from supplier where code=@code";
+            SQLiteParameter[] sQLiteParameter = new SQLiteParameter[1];
+            sQLiteParameter[0] = new SQLiteParameter("@code", code);
+            int result = SqlExecute.Execute(sQLiteParameter, deleteSQL);
+            switch(result)
+            {
+                case 0:
+                    MessageBox.Show("删除失败");
+                    break;
+                case 1:
+                    MessageBox.Show("删除成功");
+                    break;
+            }
         }
 
         private void TSB_search_Click(object sender, EventArgs e)
