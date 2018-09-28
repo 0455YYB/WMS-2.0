@@ -299,6 +299,7 @@
             // 
             // DGV_orderDetail
             // 
+            this.DGV_orderDetail.AllowUserToOrderColumns = true;
             this.DGV_orderDetail.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DGV_orderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_orderDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

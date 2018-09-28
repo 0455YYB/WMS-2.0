@@ -11,9 +11,20 @@ namespace WMS.Stock
 {
     public partial class OutStockOrder : Form
     {
-        public OutStockOrder()
+        private static OutStockOrder outStockOrder;
+        private OutStockOrder()
         {
             InitializeComponent();
+        }
+
+        public static OutStockOrder GetOutStockOrder()
+        {
+            if(outStockOrder==null||outStockOrder.IsDisposed)
+            {
+                outStockOrder = new OutStockOrder();
+                return outStockOrder;
+            }
+            return outStockOrder;
         }
     }
 }

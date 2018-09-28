@@ -11,9 +11,20 @@ namespace WMS.storge
 {
     public partial class OrderInfo : Form
     {
-        public OrderInfo()
+        private static OrderInfo orderInfo;
+        private OrderInfo()
         {
             InitializeComponent();
+        }
+
+        public static OrderInfo  GetInOrderInfo()
+        {
+            if(orderInfo==null||orderInfo.IsDisposed)
+            {
+                orderInfo = new OrderInfo();
+                return orderInfo;
+            }
+            return orderInfo;
         }
 
         private void toolStripLabel1_Click(object sender, EventArgs e)

@@ -11,9 +11,20 @@ namespace WMS.storge
 {
     public partial class InStockOrder : Form
     {
-        public InStockOrder()
+        private static InStockOrder inStockOrder;
+        private InStockOrder()
         {
             InitializeComponent();
+        }
+
+        public static InStockOrder GetInStockOrder()
+        {
+            if(inStockOrder==null||inStockOrder.IsDisposed)
+            {
+                inStockOrder = new InStockOrder();
+                return inStockOrder;
+            }
+            return inStockOrder;
         }
     }
 }
