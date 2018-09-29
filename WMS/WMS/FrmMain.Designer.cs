@@ -83,49 +83,49 @@ namespace WMS
             // 物资字典维护ToolStripMenuItem
             // 
             this.物资字典维护ToolStripMenuItem.Name = "物资字典维护ToolStripMenuItem";
-            this.物资字典维护ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.物资字典维护ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.物资字典维护ToolStripMenuItem.Text = "物资字典维护";
             this.物资字典维护ToolStripMenuItem.Click += new System.EventHandler(this.物资字典维护ToolStripMenuItem_Click);
             // 
             // 类型维护ToolStripMenuItem
             // 
             this.类型维护ToolStripMenuItem.Name = "类型维护ToolStripMenuItem";
-            this.类型维护ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.类型维护ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.类型维护ToolStripMenuItem.Text = "类型维护";
             this.类型维护ToolStripMenuItem.Click += new System.EventHandler(this.类型维护ToolStripMenuItem_Click);
             // 
             // ToolStripMenuItem2
             // 
             this.ToolStripMenuItem2.Name = "ToolStripMenuItem2";
-            this.ToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItem2.Size = new System.Drawing.Size(148, 22);
             this.ToolStripMenuItem2.Text = "物资单位维护";
             this.ToolStripMenuItem2.Click += new System.EventHandler(this.ToolStripMenuItem2_Click);
             // 
             // 部门维护ToolStripMenuItem
             // 
             this.部门维护ToolStripMenuItem.Name = "部门维护ToolStripMenuItem";
-            this.部门维护ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.部门维护ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.部门维护ToolStripMenuItem.Text = "部门维护";
             this.部门维护ToolStripMenuItem.Click += new System.EventHandler(this.部门维护ToolStripMenuItem_Click);
             // 
             // 供应商维护ToolStripMenuItem
             // 
             this.供应商维护ToolStripMenuItem.Name = "供应商维护ToolStripMenuItem";
-            this.供应商维护ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.供应商维护ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.供应商维护ToolStripMenuItem.Text = "供应商维护";
             this.供应商维护ToolStripMenuItem.Click += new System.EventHandler(this.供应商维护ToolStripMenuItem_Click);
             // 
             // 单位信息维护ToolStripMenuItem
             // 
             this.单位信息维护ToolStripMenuItem.Name = "单位信息维护ToolStripMenuItem";
-            this.单位信息维护ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.单位信息维护ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.单位信息维护ToolStripMenuItem.Text = "机构信息维护";
             this.单位信息维护ToolStripMenuItem.Click += new System.EventHandler(this.单位信息维护ToolStripMenuItem_Click);
             // 
             // 用户维护ToolStripMenuItem
             // 
             this.用户维护ToolStripMenuItem.Name = "用户维护ToolStripMenuItem";
-            this.用户维护ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.用户维护ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.用户维护ToolStripMenuItem.Text = "用户维护";
             this.用户维护ToolStripMenuItem.Click += new System.EventHandler(this.用户维护ToolStripMenuItem_Click);
             // 
@@ -142,19 +142,21 @@ namespace WMS
             // 物资入库ToolStripMenuItem
             // 
             this.物资入库ToolStripMenuItem.Name = "物资入库ToolStripMenuItem";
-            this.物资入库ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.物资入库ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.物资入库ToolStripMenuItem.Text = "物资入库";
+            this.物资入库ToolStripMenuItem.Click += new System.EventHandler(this.物资入库ToolStripMenuItem_Click);
             // 
             // 物资出库ToolStripMenuItem
             // 
             this.物资出库ToolStripMenuItem.Name = "物资出库ToolStripMenuItem";
-            this.物资出库ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.物资出库ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.物资出库ToolStripMenuItem.Text = "物资出库";
+            this.物资出库ToolStripMenuItem.Click += new System.EventHandler(this.物资出库ToolStripMenuItem_Click);
             // 
             // 库存查询ToolStripMenuItem
             // 
             this.库存查询ToolStripMenuItem.Name = "库存查询ToolStripMenuItem";
-            this.库存查询ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.库存查询ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.库存查询ToolStripMenuItem.Text = "库存查询";
             // 
             // 库存报表ToolStripMenuItem

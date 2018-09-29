@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace WMS.storge
+namespace WMS.Stock
 {
     public partial class OrderInfo : Form
     {
@@ -27,9 +27,10 @@ namespace WMS.storge
             return orderInfo;
         }
 
-        private void toolStripLabel1_Click(object sender, EventArgs e)
+        private void toolStripButton1_Click(object sender, EventArgs e)
         {
-
+            InStockOrder inStockOrder = InStockOrder.GetInStockOrder();
+            inStockOrder.Show();    
         }
     }
 }

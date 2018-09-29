@@ -6,8 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
-namespace WMS.storge
+namespace WMS.Stock
 {
     public partial class InStockOrder : Form
     {
@@ -25,6 +26,17 @@ namespace WMS.storge
                 return inStockOrder;
             }
             return inStockOrder;
+        }
+
+        private void SavePicture_Click(object sender, EventArgs e)
+        {
+            string picPath = "";
+            OpenFileDialog picFile = new OpenFileDialog();
+            if(picFile.ShowDialog()==DialogResult.OK)
+            {
+                string picName = picFile.FileName;
+                File.Copy(picName, Application.StartupPath + "\\GoodsPicture\\"+ Path.GetFileName(picFile.FileName));
+            }
         }
     }
 }

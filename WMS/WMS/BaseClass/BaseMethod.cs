@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data;
+using WMS.SQLHelper;
 
 namespace WMS.BaseClass
 {
@@ -30,6 +31,14 @@ namespace WMS.BaseClass
         public void LoadDataGridView(DataGridView dgv,string loadString)
         {
 
+        }
+
+        public static string GreateOrderNmber(string sign)
+        {
+            string orderNmber = string.Empty;
+            string dateNmber = DateTime.Now.ToString("yyyyMMdd");
+
+            return orderNmber=sign+dateNmber;
         }
     }
 }

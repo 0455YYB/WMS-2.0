@@ -112,8 +112,6 @@ E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\Interop.PROMPTINGLib.dll
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\Interop.SAXSERIALIZELib.dll
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.csproj.ResolveComReference.cache
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.Print.ReprtPrint.resources
-E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.storge.InStockOrder.resources
-E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.storge.OrderInfo.resources
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.Stock.OutOrderInfo.resources
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.Stock.OutStockOrder.resources
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.SystemSet.DepartmentSet.resources
@@ -134,3 +132,5 @@ D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.SystemSet.SetMain.resources
 D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.SystemSet.SupplierSet.resources
 D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.SystemSet.TypeSet.resources
 D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.SystemSet.UnitSet.resources
+E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.Stock.InStockOrder.resources
+E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.Stock.OrderInfo.resources

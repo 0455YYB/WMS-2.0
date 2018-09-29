@@ -1,4 +1,4 @@
-﻿namespace WMS.storge
+﻿namespace WMS.Stock
 {
     partial class OrderInfo
     {
@@ -95,7 +95,6 @@
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(77, 22);
             this.toolStripLabel1.Text = "入库类型：";
-            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
             // toolStripComboBox1
             // 
@@ -110,6 +109,7 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(97, 22);
             this.toolStripButton1.Text = "新增入库单";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripSeparator1
             // 

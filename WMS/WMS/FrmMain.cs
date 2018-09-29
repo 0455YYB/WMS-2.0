@@ -115,5 +115,23 @@ namespace WMS
             userManage.Activate();
             userManage.Show();
         }
+
+        private void 物资入库ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WMS.Stock.OrderInfo orderInfo = WMS.Stock.OrderInfo.GetInOrderInfo();
+            orderInfo.MdiParent = this;
+            orderInfo.Dock = DockStyle.Fill;
+            orderInfo.Activate();
+            orderInfo.Show();
+        }
+
+        private void 物资出库ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WMS.Stock.OutOrderInfo outOrderInfo = WMS.Stock.OutOrderInfo.GetOutOrderInfo();
+            outOrderInfo.MdiParent = this;
+            outOrderInfo.Dock = DockStyle.Fill;
+            outOrderInfo.Activate();
+            outOrderInfo.Show();
+        }
     }
 }
