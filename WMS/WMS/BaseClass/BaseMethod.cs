@@ -37,7 +37,8 @@ namespace WMS.BaseClass
         {
             string orderNmber = string.Empty;
             string dateNmber = DateTime.Now.ToString("yyyyMMdd");
-
+            string selectCurrentOrderNmb = @"select ";
+            
             return orderNmber=sign+dateNmber;
         }
     }

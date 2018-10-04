@@ -129,6 +129,22 @@ namespace WMS.SQLHelper
         #endregion
 
         /// <summary>
+        /// 获取行号 主要用于生成订单号及明细行号
+        /// </summary>
+        /// <param name="sQLiteParameters"></param>
+        /// <param name="sqlString"></param>
+        /// <returns></returns>
+        public SQLiteDataReader GetRows(SQLiteParameter[] sQLiteParameters, string sqlString)
+        {
+            SQLiteDataReader dr;
+            sqliteCom.Connection = sqliteCon;
+            sqliteCom.CommandText = sqlString;
+            sqliteCom.Parameters.AddRange(sQLiteParameters);
+            dr = sqliteCom.ExecuteReader();
+            return dr;
+        }
+
+        /// <summary>
         /// 页面数据加载
         /// </summary>
         /// <param name="sqlString">查询SQL语句</param>

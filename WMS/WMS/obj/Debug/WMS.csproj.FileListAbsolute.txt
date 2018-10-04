@@ -61,7 +61,6 @@ D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.FrmLogin.resources
 D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.FrmMain.resources
 D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.Print.ReprtPrint.resources
 D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.Properties.Resources.resources
-D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.storge.OrderInfo.resources
 D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.SystemSet.UserManage.resources
 D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.csproj.GenerateResource.cache
 D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.csproj.CoreCompileInputs.cache
@@ -122,7 +121,6 @@ E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.SystemSet.TypeSet.resources
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.SystemSet.OrganizationSet.resources
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.SystemSet.UnitSet.resources
 D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.csprojResolveAssemblyReference.cache
-D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.storge.InStockOrder.resources
 D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.Stock.OutOrderInfo.resources
 D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.Stock.OutStockOrder.resources
 D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.SystemSet.DepartmentSet.resources
@@ -134,3 +132,5 @@ D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.SystemSet.TypeSet.resources
 D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.SystemSet.UnitSet.resources
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.Stock.InStockOrder.resources
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.Stock.OrderInfo.resources
+D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.Stock.InStockOrder.resources
+D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.Stock.OrderInfo.resources
