@@ -1,6 +1,5 @@
 E:\GitHub\WMS\WMS\WMS\WMS\bin\Debug\WMS.exe
 E:\GitHub\WMS\WMS\WMS\WMS\bin\Debug\WMS.pdb
-E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.csprojResolveAssemblyReference.cache
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.FrmLogin.resources
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.FrmMain.resources
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.Properties.Resources.resources
@@ -134,3 +133,4 @@ E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.Stock.InStockOrder.resources
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.Stock.OrderInfo.resources
 D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.Stock.InStockOrder.resources
 D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.Stock.OrderInfo.resources
+E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.csprojResolveAssemblyReference.cache

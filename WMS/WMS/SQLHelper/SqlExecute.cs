@@ -134,14 +134,32 @@ namespace WMS.SQLHelper
         /// <param name="sQLiteParameters"></param>
         /// <param name="sqlString"></param>
         /// <returns></returns>
-        public SQLiteDataReader GetRows(SQLiteParameter[] sQLiteParameters, string sqlString)
+        public int GetRows( string sqlString)
         {
-            SQLiteDataReader dr;
-            sqliteCom.Connection = sqliteCon;
-            sqliteCom.CommandText = sqlString;
-            sqliteCom.Parameters.AddRange(sQLiteParameters);
-            dr = sqliteCom.ExecuteReader();
-            return dr;
+            SQLiteDataReader dr=null;
+            int rows=0;
+            try
+            {
+                sqliteCom.Connection = sqliteCon;
+                sqliteCom.CommandText = sqlString;
+                sqliteCon.Open();
+                dr = sqliteCom.ExecuteReader();
+                if(dr.Read())
+                {
+                    rows = (int)dr[0];
+                }
+                
+            }
+            catch(Exception e)
+            {
+
+            }
+            finally
+            {
+                sqliteCon.Close();
+            }
+            return rows;
+
         }
 
         /// <summary>
@@ -187,10 +205,12 @@ namespace WMS.SQLHelper
             SQLiteDataAdapter sQLiteDataAdapter;
             try
             {
+                sqliteCom.Parameters.AddRange(sQLiteParameters);
                 sqliteCom.CommandText = sqlString;
                 sqliteCom.Connection = sqliteCon;
-                sqliteCom.Parameters.AddRange(sQLiteParameters);
+                
                 sQLiteDataAdapter = new SQLiteDataAdapter(sqliteCom);
+                sqliteCon.Open();
                 sQLiteDataAdapter.Fill(dataTable);
                 return dataTable;
             }

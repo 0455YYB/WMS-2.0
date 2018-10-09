@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data;
 using WMS.SQLHelper;
+using System.Data.SQLite;
 
 namespace WMS.BaseClass
 {
@@ -35,11 +36,12 @@ namespace WMS.BaseClass
 
         public static string GreateOrderNmber(string sign)
         {
+            SqlExecute sqlExecute = new SqlExecute();
             string orderNmber = string.Empty;
             string dateNmber = DateTime.Now.ToString("yyyyMMdd");
-            string selectCurrentOrderNmb = @"select ";
-            
-            return orderNmber=sign+dateNmber;
+            string selectCurrentOrderNmb = @"select count(1) from instockorder t where t.ordercode like '%"+dateNmber+"%' ";
+            int rowsNmb =1+ sqlExecute.GetRows(selectCurrentOrderNmb);
+            return orderNmber=sign+dateNmber+rowsNmb.ToString().PadLeft(3,'0');
         }
     }
 }
