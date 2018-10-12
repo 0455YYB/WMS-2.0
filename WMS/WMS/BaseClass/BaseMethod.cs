@@ -11,6 +11,7 @@ namespace WMS.BaseClass
 {
     class BaseMethod
     {
+        static SqlExecute  sqlExecute = new SqlExecute();
         public static void LoadStop(ComboBox comboBox)
         {
             DataTable dt = new DataTable();
@@ -42,6 +43,17 @@ namespace WMS.BaseClass
             string selectCurrentOrderNmb = @"select count(1) from instockorder t where t.ordercode like '%"+dateNmber+"%' ";
             int rowsNmb =1+ sqlExecute.GetRows(selectCurrentOrderNmb);
             return orderNmber=sign+dateNmber+rowsNmb.ToString().PadLeft(3,'0');
+        }
+
+        public static void LoadCombobox(ComboBox comboBox,string sqlstring)
+        {
+            DataTable dataTable = sqlExecute.LoadInfo(sqlstring);
+            if(dataTable!=null)
+            {
+                comboBox.DisplayMember = "name";
+                comboBox.ValueMember = "code";
+                comboBox.DataSource = dataTable;
+            }
         }
     }
 }

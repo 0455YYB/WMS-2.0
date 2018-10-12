@@ -1,6 +1,6 @@
 ﻿namespace WMS.Stock
 {
-    partial class InStockOrder
+    partial class In_StockOrder
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InStockOrder));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(In_StockOrder));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.TSB_save = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -38,15 +38,8 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.TSB_delete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGV_orderDetail = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.TB_supplier = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TB_batch = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -65,8 +58,16 @@
             this.PB_order = new System.Windows.Forms.PictureBox();
             this.CB_instockType = new System.Windows.Forms.ComboBox();
             this.CB_searchCode = new System.Windows.Forms.ComboBox();
+            this.CB_supplier = new System.Windows.Forms.ComboBox();
+            this.detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.acount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.batch = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_orderDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_order)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,61 +145,25 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // dataGridView1
+            // DGV_orderDetail
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
-            this.dataGridView1.Location = new System.Drawing.Point(7, 72);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(787, 204);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "编号";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "名称";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "规格";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "单位";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "数量";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "批次";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
+            this.DGV_orderDetail.AllowUserToAddRows = false;
+            this.DGV_orderDetail.AllowUserToDeleteRows = false;
+            this.DGV_orderDetail.AllowUserToOrderColumns = true;
+            this.DGV_orderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_orderDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.detail,
+            this.code,
+            this.name,
+            this.acount,
+            this.unit,
+            this.price,
+            this.batch});
+            this.DGV_orderDetail.Location = new System.Drawing.Point(7, 72);
+            this.DGV_orderDetail.Name = "DGV_orderDetail";
+            this.DGV_orderDetail.RowTemplate.Height = 23;
+            this.DGV_orderDetail.Size = new System.Drawing.Size(787, 204);
+            this.DGV_orderDetail.TabIndex = 1;
             // 
             // label1
             // 
@@ -209,14 +174,6 @@
             this.label1.Size = new System.Drawing.Size(63, 14);
             this.label1.TabIndex = 2;
             this.label1.Text = "供应商：";
-            // 
-            // TB_supplier
-            // 
-            this.TB_supplier.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TB_supplier.Location = new System.Drawing.Point(70, 35);
-            this.TB_supplier.Name = "TB_supplier";
-            this.TB_supplier.Size = new System.Drawing.Size(100, 23);
-            this.TB_supplier.TabIndex = 3;
             // 
             // label2
             // 
@@ -258,6 +215,7 @@
             // 
             // TB_code
             // 
+            this.TB_code.Enabled = false;
             this.TB_code.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.TB_code.Location = new System.Drawing.Point(73, 336);
             this.TB_code.Name = "TB_code";
@@ -276,6 +234,7 @@
             // 
             // TB_name
             // 
+            this.TB_name.Enabled = false;
             this.TB_name.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.TB_name.Location = new System.Drawing.Point(282, 336);
             this.TB_name.Name = "TB_name";
@@ -336,6 +295,7 @@
             this.Commit.TabIndex = 18;
             this.Commit.Text = "确 定";
             this.Commit.UseVisualStyleBackColor = true;
+            this.Commit.Click += new System.EventHandler(this.Commit_Click);
             // 
             // SavePicture
             // 
@@ -382,7 +342,7 @@
             // 
             // CB_searchCode
             // 
-            this.CB_searchCode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.CB_searchCode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.CB_searchCode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CB_searchCode.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.CB_searchCode.FormattingEnabled = true;
@@ -390,13 +350,64 @@
             this.CB_searchCode.Name = "CB_searchCode";
             this.CB_searchCode.Size = new System.Drawing.Size(267, 22);
             this.CB_searchCode.TabIndex = 24;
+            this.CB_searchCode.SelectedIndexChanged += new System.EventHandler(this.CB_search_ChoiceItem);
             this.CB_searchCode.TextUpdate += new System.EventHandler(this.TextChang);
             // 
-            // InStockOrder
+            // CB_supplier
+            // 
+            this.CB_supplier.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CB_supplier.FormattingEnabled = true;
+            this.CB_supplier.Location = new System.Drawing.Point(75, 34);
+            this.CB_supplier.Name = "CB_supplier";
+            this.CB_supplier.Size = new System.Drawing.Size(121, 22);
+            this.CB_supplier.TabIndex = 25;
+            // 
+            // detail
+            // 
+            this.detail.HeaderText = "ID";
+            this.detail.Name = "detail";
+            this.detail.ReadOnly = true;
+            // 
+            // code
+            // 
+            this.code.HeaderText = "编号";
+            this.code.Name = "code";
+            this.code.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "名称";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // acount
+            // 
+            this.acount.HeaderText = "数量";
+            this.acount.Name = "acount";
+            // 
+            // unit
+            // 
+            this.unit.HeaderText = "单位";
+            this.unit.Name = "unit";
+            this.unit.ReadOnly = true;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "价格";
+            this.price.Name = "price";
+            // 
+            // batch
+            // 
+            this.batch.HeaderText = "批次";
+            this.batch.Name = "batch";
+            this.batch.ReadOnly = true;
+            // 
+            // In_StockOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 519);
+            this.Controls.Add(this.CB_supplier);
             this.Controls.Add(this.CB_searchCode);
             this.Controls.Add(this.CB_instockType);
             this.Controls.Add(this.PB_order);
@@ -415,15 +426,14 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TB_batch);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.TB_supplier);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGV_orderDetail);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "InStockOrder";
+            this.Name = "In_StockOrder";
             this.Text = "入库单据";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_orderDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_order)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -441,15 +451,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton TSB_print;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridView DGV_orderDetail;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TB_supplier;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TB_batch;
         private System.Windows.Forms.Label label3;
@@ -468,5 +471,13 @@
         private System.Windows.Forms.PictureBox PB_order;
         private System.Windows.Forms.ComboBox CB_instockType;
         private System.Windows.Forms.ComboBox CB_searchCode;
+        private System.Windows.Forms.ComboBox CB_supplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn acount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn batch;
     }
 }

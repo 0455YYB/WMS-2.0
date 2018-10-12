@@ -29,7 +29,7 @@ namespace WMS.Stock
 
         private void TSB_createOrder_Click(object sender, EventArgs e)
         {
-            InStockOrder inStockOrder = InStockOrder.GetInStockOrder();
+            In_StockOrder inStockOrder = In_StockOrder.GetInStockOrder();
             inStockOrder.Show();    
         }
 
@@ -47,7 +47,7 @@ namespace WMS.Stock
                 return;
             }
             string orderNmb = DGV_order.Rows[rowsNmb].Cells[0].Value.ToString();
-            InStockOrder inStockOrder = new InStockOrder(orderNmb);
+            In_StockOrder inStockOrder = new In_StockOrder(orderNmb);
             inStockOrder.Show();
         }
     }

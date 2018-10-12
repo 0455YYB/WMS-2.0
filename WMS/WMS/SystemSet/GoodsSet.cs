@@ -96,7 +96,7 @@ namespace WMS.SystemSet
             goodsInfo.goodsUnit = CB_unit.SelectedValue.ToString();
             if(TB_price.Text=="")
             {
-                MessageBox.Show("价格输入错误");
+                MessageBox.Show("请输入价格");
                 return;
             }
             goodsInfo.goodsPrice = double.Parse(TB_price.Text.Trim());
