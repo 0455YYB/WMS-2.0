@@ -86,6 +86,9 @@ namespace WMS.Stock
                 MessageBox.Show("请选择入库类型");
                 return;
             }
+            int rowsNmb = DGV_orderDetail.CurrentRow.Index;
+
+            
 
         }
 
@@ -176,6 +179,32 @@ namespace WMS.Stock
                                 TB_batch.Text.Trim() };
 
             DGV_orderDetail.Rows.Add(valuse);
+        }
+
+        private void TSB_delete_Click(object sender, EventArgs e)
+        {
+            if(DGV_orderDetail.Rows.Count<0)
+            {
+                MessageBox.Show("入库单为空");
+                return;
+            }
+            int rowsNmb = DGV_orderDetail.CurrentRow.Index;
+            if (rowsNmb==-1)
+            {
+                MessageBox.Show("请选中需要删除的行");
+                return;
+            }
+            string id = DGV_orderDetail.Rows[rowsNmb].Cells[0].Value.ToString().Trim();
+            if(id=="")
+            {
+                DGV_orderDetail.Rows.RemoveAt(rowsNmb);
+                return;
+            }
+            else
+            {
+                string deleteSQL = @"delete instockor";
+            }
+            
         }
     }
 }

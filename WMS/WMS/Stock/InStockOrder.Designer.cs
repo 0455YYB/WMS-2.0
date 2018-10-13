@@ -39,6 +39,13 @@
             this.TSB_delete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.DGV_orderDetail = new System.Windows.Forms.DataGridView();
+            this.detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.acount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.batch = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TB_batch = new System.Windows.Forms.TextBox();
@@ -59,13 +66,6 @@
             this.CB_instockType = new System.Windows.Forms.ComboBox();
             this.CB_searchCode = new System.Windows.Forms.ComboBox();
             this.CB_supplier = new System.Windows.Forms.ComboBox();
-            this.detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.acount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.batch = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_orderDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_order)).BeginInit();
@@ -139,6 +139,7 @@
             this.TSB_delete.Name = "TSB_delete";
             this.TSB_delete.Size = new System.Drawing.Size(62, 22);
             this.TSB_delete.Text = "删 除";
+            this.TSB_delete.Click += new System.EventHandler(this.TSB_delete_Click);
             // 
             // toolStripSeparator1
             // 
@@ -164,6 +165,46 @@
             this.DGV_orderDetail.RowTemplate.Height = 23;
             this.DGV_orderDetail.Size = new System.Drawing.Size(787, 204);
             this.DGV_orderDetail.TabIndex = 1;
+            // 
+            // detail
+            // 
+            this.detail.HeaderText = "ID";
+            this.detail.Name = "detail";
+            this.detail.ReadOnly = true;
+            // 
+            // code
+            // 
+            this.code.HeaderText = "编号";
+            this.code.Name = "code";
+            this.code.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "名称";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // acount
+            // 
+            this.acount.HeaderText = "数量";
+            this.acount.Name = "acount";
+            // 
+            // unit
+            // 
+            this.unit.HeaderText = "单位";
+            this.unit.Name = "unit";
+            this.unit.ReadOnly = true;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "价格";
+            this.price.Name = "price";
+            // 
+            // batch
+            // 
+            this.batch.HeaderText = "批次";
+            this.batch.Name = "batch";
+            this.batch.ReadOnly = true;
             // 
             // label1
             // 
@@ -361,46 +402,6 @@
             this.CB_supplier.Name = "CB_supplier";
             this.CB_supplier.Size = new System.Drawing.Size(121, 22);
             this.CB_supplier.TabIndex = 25;
-            // 
-            // detail
-            // 
-            this.detail.HeaderText = "ID";
-            this.detail.Name = "detail";
-            this.detail.ReadOnly = true;
-            // 
-            // code
-            // 
-            this.code.HeaderText = "编号";
-            this.code.Name = "code";
-            this.code.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "名称";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // acount
-            // 
-            this.acount.HeaderText = "数量";
-            this.acount.Name = "acount";
-            // 
-            // unit
-            // 
-            this.unit.HeaderText = "单位";
-            this.unit.Name = "unit";
-            this.unit.ReadOnly = true;
-            // 
-            // price
-            // 
-            this.price.HeaderText = "价格";
-            this.price.Name = "price";
-            // 
-            // batch
-            // 
-            this.batch.HeaderText = "批次";
-            this.batch.Name = "batch";
-            this.batch.ReadOnly = true;
             // 
             // In_StockOrder
             // 
