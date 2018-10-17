@@ -32,6 +32,7 @@ namespace WMS.Stock
         {
             InitializeComponent();
             orderCode = order;
+            this.DGV_orderDetail.AutoGenerateColumns = false;
         }
 
         public static In_StockOrder GetInStockOrder()
@@ -71,7 +72,8 @@ namespace WMS.Stock
 
         private void TSB_save_Click(object sender, EventArgs e)
         {
-            if(CB_supplier.Text.Trim()==null)
+            #region
+            if (CB_supplier.Text.Trim()==null)
             {
                 MessageBox.Show("请选择供应商");
                 return;
@@ -86,10 +88,65 @@ namespace WMS.Stock
                 MessageBox.Show("请选择入库类型");
                 return;
             }
-            int rowsNmb = DGV_orderDetail.CurrentRow.Index;
+            #endregion
+            int rowsNmb = DGV_orderDetail.RowCount;
+            if(rowsNmb<=0)
+            {
+                MessageBox.Show("单据无数据");
+                return;
+            }
+            else
+            {
+                int result = 1;
+                for (int i=0; i<=rowsNmb; i++)
+                {
+                    try
+                    {
+                        string saveSQL = string.Empty;
+                        SQLiteParameter[] sQLiteParameters = new SQLiteParameter[7];
+                        string ID = DGV_orderDetail.Rows[i].Cells[0].Value.ToString().Trim();
+                        //sQLiteParameters[0] = new SQLiteParameter("@ID", int.Parse(DGV_orderDetail.Rows[i].Cells[0].Value.ToString()));
+                        sQLiteParameters[0] = new SQLiteParameter("@ID", DbType.Int32,"");
+                        sQLiteParameters[1] = new SQLiteParameter("@goodscode", DGV_orderDetail.Rows[i].Cells[1].Value.ToString());
+                        sQLiteParameters[2] = new SQLiteParameter("@goodsname", DGV_orderDetail.Rows[i].Cells[2].Value.ToString());
+                        sQLiteParameters[3] = new SQLiteParameter("@amount", double.Parse(DGV_orderDetail.Rows[i].Cells[3].Value.ToString()));
+                        sQLiteParameters[4] = new SQLiteParameter("@goodsunit", DGV_orderDetail.Rows[i].Cells[4].Value.ToString());
+                        sQLiteParameters[5] = new SQLiteParameter("@goodsprice", double.Parse(DGV_orderDetail.Rows[i].Cells[5].Value.ToString()));
+                        sQLiteParameters[6] = new SQLiteParameter("@batch", DGV_orderDetail.Rows[i].Cells[6].Value.ToString());
+                        if (ID == "")
+                        {
+                            saveSQL = @"insert into inorderdetail(goodscode,goodsname,amount,goodsunit,goodsprice,batch) values(@goodscode,@goodsname,@amount,@goodsunit,@goodsprice,@batch)";
+                            int a = sqlExecute.Execute(sQLiteParameters, saveSQL);
+                        }
+                        else
+                        {
+                            sQLiteParameters[0].Value = int.Parse(ID);
+                            saveSQL = @"update inorderdetail set goodscode=@goodscode,goodsname=@goodsname,amount=@amount,goodsunit=@goodsunit,goodsprice=@goodsprice,batch=@batch where detailid=@ID";
+                            int a = sqlExecute.Execute(sQLiteParameters, saveSQL);
+                        }
+                        
 
+                    }catch(Exception ex)
+                    {
+
+                    }
+                    finally
+                    {
+                        result = 0;
+                    }
+
+                }
+                switch(result)
+                {
+                    case 1:
+                        MessageBox.Show("保存成功");
+                        break;
+                    case 0:
+                        MessageBox.Show("保存失败请核查入库单据是否有错");
+                        break;
+                }
+            }
             
-
         }
 
         private void TextChang(object sender,EventArgs e)
@@ -202,7 +259,29 @@ namespace WMS.Stock
             }
             else
             {
-                string deleteSQL = @"delete instockor";
+                try
+                {
+                    int orderID = int.Parse(id);
+                    string deleteSQL = @"delete from inorderdetail where detailid=@orderID";
+                    SQLiteParameter[] sQLiteParameters = new SQLiteParameter[1];
+                    sQLiteParameters[0] = new SQLiteParameter("@orderID", orderID);
+                    int result = sqlExecute.Execute(sQLiteParameters, deleteSQL);
+                    switch(result)
+                    {
+                        case 0:
+                            MessageBox.Show("删除失败");
+                            break;
+                        case 1:
+                            MessageBox.Show("删除成功");
+                            break;
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                
+
             }
             
         }
