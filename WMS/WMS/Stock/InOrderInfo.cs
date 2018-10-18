@@ -6,12 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SQLite;
+using WMS.SQLHelper;
 
 namespace WMS.Stock
 {
     public partial class OrderInfo : Form
     {
         private static OrderInfo orderInfo;
+        private static SqlExecute sqlExecute = new SqlExecute();
         private OrderInfo()
         {
             InitializeComponent();
@@ -49,6 +52,17 @@ namespace WMS.Stock
             string orderNmb = DGV_order.Rows[rowsNmb].Cells[0].Value.ToString();
             In_StockOrder inStockOrder = new In_StockOrder(orderNmb);
             inStockOrder.Show();
+        }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+            string dateNmber = DateTime.Now.ToString("yyyyMMdd");
+            string star = DTP_startTime.Value.ToString("yyyy-MM-dd");
+            DateTime starTime = DateTime.Parse(star);
+            DateTime endTime = DTP_endTime.Value;
+
+            string searchSQL = @"select ordercode,(case status when 0 then '新制'  when 1 then '审核'   end)  status from instockorder where createtime between @startime and @endtime;";
+            SQLiteParameter[] sQLiteParameters = new SQLiteParameter[];
         }
     }
 }

@@ -203,6 +203,7 @@
             this.Search.TabIndex = 6;
             this.Search.Text = "查 询";
             this.Search.UseVisualStyleBackColor = true;
+            this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
             // DTP_endTime
             // 
@@ -222,7 +223,14 @@
             // 
             // CB_type
             // 
+            this.CB_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_type.FormattingEnabled = true;
+            this.CB_type.Items.AddRange(new object[] {
+            "购买入库",
+            "院内转借",
+            "科室退回",
+            "赠送入库",
+            "其他入库"});
             this.CB_type.Location = new System.Drawing.Point(53, 23);
             this.CB_type.Name = "CB_type";
             this.CB_type.Size = new System.Drawing.Size(121, 22);
@@ -264,11 +272,13 @@
             // 
             this.Column1.HeaderText = "单号";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "状态";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // groupBox2
             // 

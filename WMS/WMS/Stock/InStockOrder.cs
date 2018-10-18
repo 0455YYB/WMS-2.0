@@ -17,6 +17,7 @@ namespace WMS.Stock
         private static In_StockOrder inStockOrder;
         private static string sign = "R";
         private static string orderCode;
+        private static string newCreateOrder;
         SQLHelper.SqlExecute sqlExecute = new SQLHelper.SqlExecute();
         private static string iniString=@"select code,name from supplier where status=0";
         #endregion
@@ -26,6 +27,7 @@ namespace WMS.Stock
             InitializeComponent();
             orderCode = BaseClass.BaseMethod.GreateOrderNmber(sign);
             BaseClass.BaseMethod.LoadCombobox(CB_supplier,iniString);
+            newCreateOrder = "0";
         }
 
         public In_StockOrder(string order)
@@ -33,6 +35,7 @@ namespace WMS.Stock
             InitializeComponent();
             orderCode = order;
             this.DGV_orderDetail.AutoGenerateColumns = false;
+            newCreateOrder = "1";
         }
 
         public static In_StockOrder GetInStockOrder()
@@ -72,7 +75,7 @@ namespace WMS.Stock
 
         private void TSB_save_Click(object sender, EventArgs e)
         {
-            #region
+            #region 初始化判断
             if (CB_supplier.Text.Trim()==null)
             {
                 MessageBox.Show("请选择供应商");
@@ -88,7 +91,7 @@ namespace WMS.Stock
                 MessageBox.Show("请选择入库类型");
                 return;
             }
-            #endregion
+            #endregion 
             int rowsNmb = DGV_orderDetail.RowCount;
             if(rowsNmb<=0)
             {
@@ -97,8 +100,22 @@ namespace WMS.Stock
             }
             else
             {
+                if (newCreateOrder == "0")
+                {
+                    string createOrderCodeSQL = @"insert into instockorder(ordercode,createtime,supplier,type) values(@ordercode,datetime('now'),@supplier,@type)";
+                    SQLiteParameter[] sQLiteParameters = new SQLiteParameter[3];
+                    sQLiteParameters[0] = new SQLiteParameter("@ordercode", orderCode);
+                    sQLiteParameters[1] = new SQLiteParameter("@supplier", CB_supplier.Text.ToString());
+                    sQLiteParameters[2] = new SQLiteParameter("@type", CB_instockType.Text.ToString());
+                    int b = sqlExecute.Execute(sQLiteParameters, createOrderCodeSQL);
+                    if(b!=1)
+                    {
+                        MessageBox.Show("保存单号失败");
+                        return;
+                    }
+                } //是否需要新增单据 修改单据自动跳过
                 int result = 1;
-                for (int i=0; i<=rowsNmb; i++)
+                for (int i=0; i<rowsNmb; i++)
                 {
                     try
                     {
@@ -117,25 +134,34 @@ namespace WMS.Stock
                         {
                             saveSQL = @"insert into inorderdetail(goodscode,goodsname,amount,goodsunit,goodsprice,batch) values(@goodscode,@goodsname,@amount,@goodsunit,@goodsprice,@batch)";
                             int a = sqlExecute.Execute(sQLiteParameters, saveSQL);
+                            if(a==0)
+                            {
+                                MessageBox.Show("添加"+ DGV_orderDetail.Rows[i].Cells[2].Value.ToString()+"数据失败");
+                            }
                         }
                         else
                         {
                             sQLiteParameters[0].Value = int.Parse(ID);
                             saveSQL = @"update inorderdetail set goodscode=@goodscode,goodsname=@goodsname,amount=@amount,goodsunit=@goodsunit,goodsprice=@goodsprice,batch=@batch where detailid=@ID";
                             int a = sqlExecute.Execute(sQLiteParameters, saveSQL);
+                            if (a == 0)
+                            {
+                                MessageBox.Show("修改" + DGV_orderDetail.Rows[i].Cells[2].Value.ToString() + "数据失败");
+                            }
                         }
                         
 
                     }catch(Exception ex)
                     {
-
+                        result = 0;
+                        MessageBox.Show(ex.Message);
                     }
                     finally
                     {
-                        result = 0;
+                        
                     }
 
-                }
+                } //数据写入数据库
                 switch(result)
                 {
                     case 1:

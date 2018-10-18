@@ -136,17 +136,17 @@ namespace WMS.SQLHelper
         /// <returns></returns>
         public int GetRows( string sqlString)
         {
-            SQLiteDataReader dr=null;
+            
             int rows=0;
             try
             {
                 sqliteCom.Connection = sqliteCon;
                 sqliteCom.CommandText = sqlString;
                 sqliteCon.Open();
-                dr = sqliteCom.ExecuteReader();
+                SQLiteDataReader dr = sqliteCom.ExecuteReader();
                 if(dr.Read())
                 {
-                    rows = (int)dr[0];
+                    rows = int.Parse(dr["rows"].ToString());
                 }
                 
             }

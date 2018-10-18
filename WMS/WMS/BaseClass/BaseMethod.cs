@@ -40,7 +40,7 @@ namespace WMS.BaseClass
             SqlExecute sqlExecute = new SqlExecute();
             string orderNmber = string.Empty;
             string dateNmber = DateTime.Now.ToString("yyyyMMdd");
-            string selectCurrentOrderNmb = @"select count(1) from instockorder t where t.ordercode like '%"+dateNmber+"%' ";
+            string selectCurrentOrderNmb = @"select count(1) rows from instockorder t where t.ordercode like '%"+dateNmber+"%' ";
             int rowsNmb =1+ sqlExecute.GetRows(selectCurrentOrderNmb);
             return orderNmber=sign+dateNmber+rowsNmb.ToString().PadLeft(3,'0');
         }

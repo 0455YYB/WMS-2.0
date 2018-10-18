@@ -375,7 +375,9 @@
             this.CB_instockType.Items.AddRange(new object[] {
             "购买入库",
             "院内转借",
-            "科室退回"});
+            "科室退回",
+            "赠送入库",
+            "其他入库"});
             this.CB_instockType.Location = new System.Drawing.Point(537, 35);
             this.CB_instockType.Name = "CB_instockType";
             this.CB_instockType.Size = new System.Drawing.Size(121, 22);
