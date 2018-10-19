@@ -54,13 +54,16 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.TB_sumPrice = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.DGV_orderDetail = new System.Windows.Forms.DataGridView();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goodscode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goodsname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goodsunit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goodsprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.batch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_order)).BeginInit();
@@ -85,7 +88,7 @@
             this.TSB_print});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(849, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1018, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -153,6 +156,7 @@
             this.TSB_auditing.Name = "TSB_auditing";
             this.TSB_auditing.Size = new System.Drawing.Size(55, 22);
             this.TSB_auditing.Text = "审核";
+            this.TSB_auditing.Click += new System.EventHandler(this.TSB_auditing_Click);
             // 
             // toolStripSeparator4
             // 
@@ -179,6 +183,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.Search);
             this.groupBox1.Controls.Add(this.DTP_endTime);
             this.groupBox1.Controls.Add(this.label2);
@@ -189,7 +194,7 @@
             this.groupBox1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(7, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(259, 572);
+            this.groupBox1.Size = new System.Drawing.Size(259, 630);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "单 据";
@@ -261,12 +266,13 @@
             this.DGV_order.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
-            this.DGV_order.Location = new System.Drawing.Point(5, 226);
+            this.DGV_order.Location = new System.Drawing.Point(5, 179);
             this.DGV_order.Name = "DGV_order";
             this.DGV_order.ReadOnly = true;
             this.DGV_order.RowTemplate.Height = 23;
-            this.DGV_order.Size = new System.Drawing.Size(248, 382);
+            this.DGV_order.Size = new System.Drawing.Size(248, 443);
             this.DGV_order.TabIndex = 0;
+            this.DGV_order.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_order_CellClick);
             // 
             // Column1
             // 
@@ -283,12 +289,13 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.TB_sumPrice);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.DGV_orderDetail);
             this.groupBox2.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(283, 39);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(566, 570);
+            this.groupBox2.Size = new System.Drawing.Size(723, 570);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "单据详细信息";
@@ -296,11 +303,20 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(373, 544);
+            this.label4.Location = new System.Drawing.Point(447, 543);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 14);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "[金额]";
+            this.label4.Size = new System.Drawing.Size(21, 14);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "元";
+            // 
+            // TB_sumPrice
+            // 
+            this.TB_sumPrice.AutoSize = true;
+            this.TB_sumPrice.Location = new System.Drawing.Point(373, 544);
+            this.TB_sumPrice.Name = "TB_sumPrice";
+            this.TB_sumPrice.Size = new System.Drawing.Size(49, 14);
+            this.TB_sumPrice.TabIndex = 2;
+            this.TB_sumPrice.Text = "[金额]";
             // 
             // label3
             // 
@@ -313,51 +329,75 @@
             // 
             // DGV_orderDetail
             // 
+            this.DGV_orderDetail.AllowUserToAddRows = false;
+            this.DGV_orderDetail.AllowUserToDeleteRows = false;
             this.DGV_orderDetail.AllowUserToOrderColumns = true;
             this.DGV_orderDetail.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DGV_orderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_orderDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7});
+            this.goodscode,
+            this.goodsname,
+            this.amount,
+            this.goodsunit,
+            this.goodsprice,
+            this.batch});
             this.DGV_orderDetail.Location = new System.Drawing.Point(6, 22);
             this.DGV_orderDetail.Name = "DGV_orderDetail";
+            this.DGV_orderDetail.ReadOnly = true;
             this.DGV_orderDetail.RowTemplate.Height = 23;
-            this.DGV_orderDetail.Size = new System.Drawing.Size(554, 514);
+            this.DGV_orderDetail.Size = new System.Drawing.Size(647, 514);
             this.DGV_orderDetail.TabIndex = 0;
             // 
-            // Column3
+            // goodscode
             // 
-            this.Column3.HeaderText = "编号";
-            this.Column3.Name = "Column3";
+            this.goodscode.HeaderText = "编号";
+            this.goodscode.Name = "goodscode";
+            this.goodscode.ReadOnly = true;
             // 
-            // Column4
+            // goodsname
             // 
-            this.Column4.HeaderText = "名称";
-            this.Column4.Name = "Column4";
+            this.goodsname.HeaderText = "名称";
+            this.goodsname.Name = "goodsname";
+            this.goodsname.ReadOnly = true;
             // 
-            // Column5
+            // amount
             // 
-            this.Column5.HeaderText = "单位";
-            this.Column5.Name = "Column5";
+            this.amount.HeaderText = "数量";
+            this.amount.Name = "amount";
+            this.amount.ReadOnly = true;
             // 
-            // Column6
+            // goodsunit
             // 
-            this.Column6.HeaderText = "数量";
-            this.Column6.Name = "Column6";
+            this.goodsunit.HeaderText = "单位";
+            this.goodsunit.Name = "goodsunit";
+            this.goodsunit.ReadOnly = true;
             // 
-            // Column7
+            // goodsprice
             // 
-            this.Column7.HeaderText = "批次";
-            this.Column7.Name = "Column7";
+            this.goodsprice.HeaderText = "单价";
+            this.goodsprice.Name = "goodsprice";
+            this.goodsprice.ReadOnly = true;
+            // 
+            // batch
+            // 
+            this.batch.HeaderText = "批次";
+            this.batch.Name = "batch";
+            this.batch.ReadOnly = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(23, 96);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(21, 14);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "至";
             // 
             // OrderInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(849, 612);
+            this.ClientSize = new System.Drawing.Size(1018, 662);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
@@ -404,12 +444,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView DGV_orderDetail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label TB_sumPrice;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn goodscode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn goodsname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn goodsunit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn goodsprice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn batch;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -12,6 +12,7 @@ namespace WMS.Stock
     public partial class OutStockOrder : Form
     {
         private static OutStockOrder outStockOrder;
+        DataTable minusIDAndAmount;
         private OutStockOrder()
         {
             InitializeComponent();
@@ -26,5 +27,7 @@ namespace WMS.Stock
             }
             return outStockOrder;
         }
+
+        //查询药品时弹出datagirdview显示当前有库存的批次按时间排序，填好数确认之后将扣减明细id和数量存放到minusIDAndAmount
     }
 }

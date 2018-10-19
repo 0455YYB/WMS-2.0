@@ -34,8 +34,10 @@ namespace WMS.Stock
         {
             InitializeComponent();
             orderCode = order;
+            BaseClass.BaseMethod.LoadCombobox(CB_supplier, iniString);
             this.DGV_orderDetail.AutoGenerateColumns = false;
             newCreateOrder = "1";
+            LoadDGV_orderDetail(orderCode);
         }
 
         public static In_StockOrder GetInStockOrder()
@@ -132,7 +134,7 @@ namespace WMS.Stock
                         sQLiteParameters[6] = new SQLiteParameter("@batch", DGV_orderDetail.Rows[i].Cells[6].Value.ToString());
                         if (ID == "")
                         {
-                            saveSQL = @"insert into inorderdetail(goodscode,goodsname,amount,goodsunit,goodsprice,batch) values(@goodscode,@goodsname,@amount,@goodsunit,@goodsprice,@batch)";
+                            saveSQL = @"insert into inorderdetail(goodscode,goodsname,amount,goodsunit,goodsprice,batch,ordercode) values(@goodscode,@goodsname,@amount,@goodsunit,@goodsprice,@batch,'"+orderCode+"')";
                             int a = sqlExecute.Execute(sQLiteParameters, saveSQL);
                             if(a==0)
                             {
@@ -310,6 +312,21 @@ namespace WMS.Stock
 
             }
             
+        }
+
+        private void LoadDGV_orderDetail(string ordercode)
+        {
+            string loadOrderDetail = @"select detailid, goodscode,goodsname,amount,goodsunit,goodsprice,batch from inorderdetail where ordercode='" + ordercode + "'; ";
+            DataTable detailInfo = sqlExecute.LoadInfo(loadOrderDetail);
+            DGV_orderDetail.AutoGenerateColumns = false;
+            DGV_orderDetail.DataSource = detailInfo;
+            DGV_orderDetail.Columns["detailid"].DataPropertyName = detailInfo.Columns["detailid"].ToString();
+            DGV_orderDetail.Columns["code"].DataPropertyName = detailInfo.Columns["goodscode"].ToString();
+            DGV_orderDetail.Columns["name"].DataPropertyName = detailInfo.Columns["goodsname"].ToString();
+            DGV_orderDetail.Columns["amount"].DataPropertyName = detailInfo.Columns["amount"].ToString();
+            DGV_orderDetail.Columns["unit"].DataPropertyName = detailInfo.Columns["goodsunit"].ToString();
+            DGV_orderDetail.Columns["price"].DataPropertyName = detailInfo.Columns["goodsprice"].ToString();
+            DGV_orderDetail.Columns["batch"].DataPropertyName = detailInfo.Columns["batch"].ToString();
         }
     }
 }

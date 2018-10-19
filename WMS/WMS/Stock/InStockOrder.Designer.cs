@@ -39,13 +39,6 @@
             this.TSB_delete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.DGV_orderDetail = new System.Windows.Forms.DataGridView();
-            this.detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.acount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.batch = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TB_batch = new System.Windows.Forms.TextBox();
@@ -66,6 +59,13 @@
             this.CB_instockType = new System.Windows.Forms.ComboBox();
             this.CB_searchCode = new System.Windows.Forms.ComboBox();
             this.CB_supplier = new System.Windows.Forms.ComboBox();
+            this.detailid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.batch = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_orderDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_order)).BeginInit();
@@ -153,10 +153,10 @@
             this.DGV_orderDetail.AllowUserToOrderColumns = true;
             this.DGV_orderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_orderDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.detail,
+            this.detailid,
             this.code,
             this.name,
-            this.acount,
+            this.amount,
             this.unit,
             this.price,
             this.batch});
@@ -165,46 +165,6 @@
             this.DGV_orderDetail.RowTemplate.Height = 23;
             this.DGV_orderDetail.Size = new System.Drawing.Size(787, 204);
             this.DGV_orderDetail.TabIndex = 1;
-            // 
-            // detail
-            // 
-            this.detail.HeaderText = "ID";
-            this.detail.Name = "detail";
-            this.detail.ReadOnly = true;
-            // 
-            // code
-            // 
-            this.code.HeaderText = "编号";
-            this.code.Name = "code";
-            this.code.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "名称";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // acount
-            // 
-            this.acount.HeaderText = "数量";
-            this.acount.Name = "acount";
-            // 
-            // unit
-            // 
-            this.unit.HeaderText = "单位";
-            this.unit.Name = "unit";
-            this.unit.ReadOnly = true;
-            // 
-            // price
-            // 
-            this.price.HeaderText = "价格";
-            this.price.Name = "price";
-            // 
-            // batch
-            // 
-            this.batch.HeaderText = "批次";
-            this.batch.Name = "batch";
-            this.batch.ReadOnly = true;
             // 
             // label1
             // 
@@ -405,6 +365,46 @@
             this.CB_supplier.Size = new System.Drawing.Size(121, 22);
             this.CB_supplier.TabIndex = 25;
             // 
+            // detailid
+            // 
+            this.detailid.HeaderText = "ID";
+            this.detailid.Name = "detailid";
+            this.detailid.ReadOnly = true;
+            // 
+            // code
+            // 
+            this.code.HeaderText = "编号";
+            this.code.Name = "code";
+            this.code.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "名称";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // amount
+            // 
+            this.amount.HeaderText = "数量";
+            this.amount.Name = "amount";
+            // 
+            // unit
+            // 
+            this.unit.HeaderText = "单位";
+            this.unit.Name = "unit";
+            this.unit.ReadOnly = true;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "价格";
+            this.price.Name = "price";
+            // 
+            // batch
+            // 
+            this.batch.HeaderText = "批次";
+            this.batch.Name = "batch";
+            this.batch.ReadOnly = true;
+            // 
             // In_StockOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -475,10 +475,10 @@
         private System.Windows.Forms.ComboBox CB_instockType;
         private System.Windows.Forms.ComboBox CB_searchCode;
         private System.Windows.Forms.ComboBox CB_supplier;
-        private System.Windows.Forms.DataGridViewTextBoxColumn detail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detailid;
         private System.Windows.Forms.DataGridViewTextBoxColumn code;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn acount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
         private System.Windows.Forms.DataGridViewTextBoxColumn unit;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn batch;

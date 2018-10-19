@@ -224,5 +224,34 @@ namespace WMS.SQLHelper
             }
             
         }
+
+        /// <summary>
+        /// 扣减库存 1-扣减成功，n-第n行数据扣减失败
+        /// </summary>
+        /// <param name="dataTable"></param>
+        /// <returns></returns>
+        public int MinusStock(DataTable dataTable)
+        {
+            int result = 0;
+            string minusSQL;
+            sqliteCon.Open();
+            IDbTransaction trans = sqliteCon.BeginTransaction();
+            sqliteCom.Connection = sqliteCon;
+            try
+            {
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    string goodscode = dataTable.Rows[i][0].ToString();
+                    double amount = double.Parse(dataTable.Rows[i][1].ToString());
+                }
+                trans.Commit();
+            }
+            catch
+            {
+                trans.Rollback();
+                throw;
+            }
+            return result;
+        }
     }
 }
