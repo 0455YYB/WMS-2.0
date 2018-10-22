@@ -38,17 +38,20 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.CB_orderType = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ordercode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.CB_orderType = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,9 +59,6 @@
             this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.batch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -90,6 +90,7 @@
             this.TSB_createOrder.Name = "TSB_createOrder";
             this.TSB_createOrder.Size = new System.Drawing.Size(99, 24);
             this.TSB_createOrder.Text = "新建出库单";
+            this.TSB_createOrder.Click += new System.EventHandler(this.TSB_createOrder_Click);
             // 
             // toolStripSeparator1
             // 
@@ -148,65 +149,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "出库单";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 14);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "类型：";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 72);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 14);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "时间：";
-            // 
-            // CB_orderType
-            // 
-            this.CB_orderType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CB_orderType.FormattingEnabled = true;
-            this.CB_orderType.Location = new System.Drawing.Point(62, 34);
-            this.CB_orderType.Name = "CB_orderType";
-            this.CB_orderType.Size = new System.Drawing.Size(121, 22);
-            this.CB_orderType.TabIndex = 2;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(63, 72);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 3;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(63, 114);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker2.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 118);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(21, 14);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "至";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(169, 157);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 32);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "查 询";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -235,6 +177,65 @@
             this.status.Name = "status";
             this.status.ReadOnly = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(169, 157);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 32);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "查 询";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(23, 118);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(21, 14);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "至";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(63, 114);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 23);
+            this.dateTimePicker2.TabIndex = 4;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(63, 72);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
+            this.dateTimePicker1.TabIndex = 3;
+            // 
+            // CB_orderType
+            // 
+            this.CB_orderType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CB_orderType.FormattingEnabled = true;
+            this.CB_orderType.Location = new System.Drawing.Point(62, 34);
+            this.CB_orderType.Name = "CB_orderType";
+            this.CB_orderType.Size = new System.Drawing.Size(121, 22);
+            this.CB_orderType.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 72);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 14);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "时间：";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 14);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "类型：";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label6);
@@ -248,6 +249,33 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "单据信息";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(475, 554);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(21, 14);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "元";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(404, 554);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 14);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "[金额]";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(306, 554);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 14);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "单据总金额：";
             // 
             // dataGridView2
             // 
@@ -304,33 +332,6 @@
             this.batch.HeaderText = "批号";
             this.batch.Name = "batch";
             this.batch.ReadOnly = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(306, 554);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 14);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "单据总金额：";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(404, 554);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 14);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "[金额]";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(475, 554);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(21, 14);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "元";
             // 
             // OutOrderInfo
             // 

@@ -26,5 +26,11 @@ namespace WMS.Stock
             }
             return outOrderInfo;
         }
+
+        private void TSB_createOrder_Click(object sender, EventArgs e)
+        {
+            OutStockOrder outStockOrder = OutStockOrder.GetOutStockOrder();
+            outStockOrder.Show();
+        }
     }
 }

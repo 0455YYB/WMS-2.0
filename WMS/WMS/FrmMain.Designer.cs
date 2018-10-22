@@ -142,21 +142,21 @@ namespace WMS
             // 物资入库ToolStripMenuItem
             // 
             this.物资入库ToolStripMenuItem.Name = "物资入库ToolStripMenuItem";
-            this.物资入库ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.物资入库ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.物资入库ToolStripMenuItem.Text = "物资入库";
             this.物资入库ToolStripMenuItem.Click += new System.EventHandler(this.物资入库ToolStripMenuItem_Click);
             // 
             // 物资出库ToolStripMenuItem
             // 
             this.物资出库ToolStripMenuItem.Name = "物资出库ToolStripMenuItem";
-            this.物资出库ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.物资出库ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.物资出库ToolStripMenuItem.Text = "物资出库";
             this.物资出库ToolStripMenuItem.Click += new System.EventHandler(this.物资出库ToolStripMenuItem_Click);
             // 
             // 库存查询ToolStripMenuItem
             // 
             this.库存查询ToolStripMenuItem.Name = "库存查询ToolStripMenuItem";
-            this.库存查询ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.库存查询ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.库存查询ToolStripMenuItem.Text = "库存查询";
             // 
             // 库存报表ToolStripMenuItem
@@ -199,7 +199,7 @@ namespace WMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1285, 668);
+            this.ClientSize = new System.Drawing.Size(1285, 699);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;

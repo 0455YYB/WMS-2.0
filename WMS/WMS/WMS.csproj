@@ -132,6 +132,12 @@
     <Compile Include="SQLHelper\ExecuteSQL.cs" />
     <Compile Include="SQLHelper\SqlExecute.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Stock\CheckBatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\CheckBatch.Designer.cs">
+      <DependentUpon>CheckBatch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stock\InStockOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +230,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Stock\CheckBatch.resx">
+      <DependentUpon>CheckBatch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Stock\InStockOrder.resx">
       <DependentUpon>InStockOrder.cs</DependentUpon>
     </EmbeddedResource>
