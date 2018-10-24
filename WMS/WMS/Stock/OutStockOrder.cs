@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace WMS.Stock
 {
@@ -29,18 +30,24 @@ namespace WMS.Stock
             return outStockOrder;
         }
 
-        public void SearchChang(object sender,EventArgs args)
+        public void SearchCodeChang(object sender,EventArgs args)
         {
+            string searchCode = CB_searchCode.Text.ToString().Trim();
+            string selectBatch = @"select goodscode,goodsname from inorderdetail,instockorder where (goodscode like @searchcode or goodsname like @searchcode) and amount>0 and instockorder.status=1 and inorderdetail.status=1 and instockorder.ordercode=inorderdetail.ordercode order by createtime";
+
             
-            string selectBatch = @"select goodscode,goodsname,goodsprice,amount,createtime from inorderdetail,instockorder where (goodscode like @searchcode or goodsname like @searchcode) and amount>0 and instockorder.status=1 and inorderdetail.status=1 and instockorder.ordercode=inorderdetail.ordercode order by createtime";
-            
+        }
+
+        public void SelectChoice(object sender,EventArgs args)
+        {
+
         }
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="dataTable"></param>
-        private void addTataToTable(DataTable dataTable)
+        private void AddTataToTable(DataTable dataTable)
         {
             if(minusIDAndAmount==null)
             {
@@ -61,6 +68,9 @@ namespace WMS.Stock
                 }
             }
         }
+
+
+ 
 
       
 
