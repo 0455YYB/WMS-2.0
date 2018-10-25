@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using WMS.SQLHelper;
 
 namespace WMS.Stock
 {
@@ -14,6 +15,8 @@ namespace WMS.Stock
     {
         private static OutStockOrder outStockOrder;
         DataTable minusIDAndAmount=null;
+        SqlExecute sqlExecute = new SqlExecute();
+        private static string sign = "C";
 
         private OutStockOrder()
         {
@@ -34,8 +37,23 @@ namespace WMS.Stock
         {
             string searchCode = CB_searchCode.Text.ToString().Trim();
             string selectBatch = @"select goodscode,goodsname from inorderdetail,instockorder where (goodscode like @searchcode or goodsname like @searchcode) and amount>0 and instockorder.status=1 and inorderdetail.status=1 and instockorder.ordercode=inorderdetail.ordercode order by createtime";
-
-            
+            SQLiteParameter[] sQLiteParameters = new SQLiteParameter[1];
+            sQLiteParameters[0] = new SQLiteParameter("@searchcode","%"+ searchCode + "%");
+            DataTable detailInfo;
+            detailInfo = sqlExecute.SelectInfo(sQLiteParameters, selectBatch);
+            int j = detailInfo.Rows.Count;
+            if (j > 0)
+            {
+                CB_searchCode.Items.Clear();
+                for (int a = 0; a < j; a++)
+                {
+                    CB_searchCode.Items.Add(detailInfo.Rows[a]["goodscode"] + "|" + detailInfo.Rows[a]["goodsname"] + "|" );
+                }
+                CB_searchCode.Focus();
+                CB_searchCode.Select(CB_searchCode.Text.Length, 0);
+            }
+            CB_searchCode.DroppedDown = true;
+            CB_searchCode.SelectedIndex = -1;
         }
 
         public void SelectChoice(object sender,EventArgs args)

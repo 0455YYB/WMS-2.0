@@ -29,13 +29,29 @@ namespace WMS.Stock
 
         private void BT_sureBatch_Click(object sender, EventArgs e)
         {
+            for(int i=0;i<DGV_batchDetail.Rows.Count; i++)
+            {
+                double outAmount = double.Parse(DGV_batchDetail.Rows[i].Cells[4].Value.ToString().Trim());
+                if(outAmount>0)
+                {
+                    DataRow dr = batch.NewRow();
+                    dr["detailid"] = DGV_batchDetail.Rows[i].Cells[0].Value.ToString();
+                    dr["goodscode"] = DGV_batchDetail.Rows[i].Cells[1].Value.ToString();
+                    dr["goodsname"] = DGV_batchDetail.Rows[i].Cells[2].Value.ToString();
+                    dr["outamount"] = outAmount;
+                    dr["goodsunit"] = DGV_batchDetail.Rows[i].Cells[5].Value.ToString();
+                    dr["goodsprice"] = DGV_batchDetail.Rows[i].Cells[6].Value.ToString();
+                    batch.Rows.Add(dr);
+                }
+            }
             TE(batch);
+            batch.Clear();
             this.Dispose();
         }
 
         public void LoadBatch(string goodscode)
         {
-            string loadBatchSQL = @"select detailid,goodscode,goodsname,amount,goodsunit,goodsprice from inorderdetail where goodscode=@goodscode and status=1 and amount>0";
+            string loadBatchSQL = @"select detailid,goodscode,goodsname,amount,goodsunit,goodsprice from inorderdetail where goodscode=@goodscode and status=1 and amount>0 order by detailid";
             SQLiteParameter[] sQLiteParameter = new SQLiteParameter[1];
             sQLiteParameter[0] = new SQLiteParameter("@goodscode",goodscode);
             batch = sqlExecute.SelectInfo(sQLiteParameter, loadBatchSQL);
