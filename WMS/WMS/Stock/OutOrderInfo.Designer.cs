@@ -213,6 +213,11 @@
             // 
             this.CB_orderType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_orderType.FormattingEnabled = true;
+            this.CB_orderType.Items.AddRange(new object[] {
+            "正常出库",
+            "科室借调",
+            "损耗出库",
+            "退供应商"});
             this.CB_orderType.Location = new System.Drawing.Point(62, 34);
             this.CB_orderType.Name = "CB_orderType";
             this.CB_orderType.Size = new System.Drawing.Size(121, 22);

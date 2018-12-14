@@ -24,7 +24,7 @@ namespace WMS.Stock
             InitializeComponent();
             goodscode = code;
             LoadBatch(goodscode);
-            DGV_batchDetail.AutoGenerateColumns = false;
+            
         }
 
         private void BT_sureBatch_Click(object sender, EventArgs e)
@@ -55,6 +55,7 @@ namespace WMS.Stock
             SQLiteParameter[] sQLiteParameter = new SQLiteParameter[1];
             sQLiteParameter[0] = new SQLiteParameter("@goodscode",goodscode);
             batch = sqlExecute.SelectInfo(sQLiteParameter, loadBatchSQL);
+            DGV_batchDetail.AutoGenerateColumns = false;
             DGV_batchDetail.DataSource = batch;
             DGV_batchDetail.Columns["detailid"].DataPropertyName = batch.Columns["detailid"].ToString();
             DGV_batchDetail.Columns["goodscode1"].DataPropertyName = batch.Columns["goodscode"].ToString();
@@ -62,6 +63,11 @@ namespace WMS.Stock
             DGV_batchDetail.Columns["amount"].DataPropertyName = batch.Columns["amount"].ToString();
             DGV_batchDetail.Columns["goodsunit"].DataPropertyName = batch.Columns["goodsunit"].ToString();
             DGV_batchDetail.Columns["goodsprice"].DataPropertyName = batch.Columns["goodsprice"].ToString();
+        }
+
+        private void  BT_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

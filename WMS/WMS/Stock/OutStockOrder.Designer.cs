@@ -38,16 +38,16 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.DGV_outStock = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.CB_searchCode = new System.Windows.Forms.ComboBox();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CB_searchCode = new System.Windows.Forms.ComboBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_outStock)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -132,58 +132,6 @@
             this.DGV_outStock.Size = new System.Drawing.Size(944, 296);
             this.DGV_outStock.TabIndex = 0;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(373, 332);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 14);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "单据总金额：";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(462, 332);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 14);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "[金额]";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.DGV_outStock);
-            this.groupBox2.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 109);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1145, 502);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "单据详细信息";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(26, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 14);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "查询码：";
-            // 
-            // CB_searchCode
-            // 
-            this.CB_searchCode.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CB_searchCode.FormattingEnabled = true;
-            this.CB_searchCode.Location = new System.Drawing.Point(96, 54);
-            this.CB_searchCode.Name = "CB_searchCode";
-            this.CB_searchCode.Size = new System.Drawing.Size(121, 22);
-            this.CB_searchCode.TabIndex = 4;
-            // 
             // Column3
             // 
             this.Column3.HeaderText = "编码";
@@ -213,6 +161,60 @@
             this.Column7.HeaderText = "价格";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(373, 332);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 14);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "单据总金额：";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(462, 332);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 14);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "[金额]";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.DGV_outStock);
+            this.groupBox2.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox2.Location = new System.Drawing.Point(12, 204);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1145, 370);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "单据详细信息";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(26, 154);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 14);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "查询码：";
+            // 
+            // CB_searchCode
+            // 
+            this.CB_searchCode.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CB_searchCode.FormattingEnabled = true;
+            this.CB_searchCode.Location = new System.Drawing.Point(96, 149);
+            this.CB_searchCode.Name = "CB_searchCode";
+            this.CB_searchCode.Size = new System.Drawing.Size(121, 22);
+            this.CB_searchCode.TabIndex = 4;
+            this.CB_searchCode.SelectedIndexChanged += new System.EventHandler(this.SelectItem);
+            this.CB_searchCode.TextUpdate += new System.EventHandler(this.SearchCodeChang);
             // 
             // OutStockOrder
             // 

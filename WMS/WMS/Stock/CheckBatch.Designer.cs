@@ -28,8 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DGV_batchDetail = new System.Windows.Forms.DataGridView();
             this.BT_sureBatch = new System.Windows.Forms.Button();
+            this.BT_close = new System.Windows.Forms.Button();
             this.detailid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goodscode1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goodsname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,46 +79,79 @@
             this.BT_sureBatch.UseVisualStyleBackColor = true;
             this.BT_sureBatch.Click += new System.EventHandler(this.BT_sureBatch_Click);
             // 
+            // BT_close
+            // 
+            this.BT_close.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BT_close.Location = new System.Drawing.Point(406, 329);
+            this.BT_close.Name = "BT_close";
+            this.BT_close.Size = new System.Drawing.Size(78, 37);
+            this.BT_close.TabIndex = 2;
+            this.BT_close.Text = "取 消";
+            this.BT_close.UseVisualStyleBackColor = true;
+            this.BT_close.Click += new System.EventHandler(this.BT_close_Click);
+            // 
             // detailid
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.detailid.DefaultCellStyle = dataGridViewCellStyle1;
             this.detailid.HeaderText = "库存号";
             this.detailid.Name = "detailid";
+            this.detailid.ReadOnly = true;
             // 
             // goodscode1
             // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.goodscode1.DefaultCellStyle = dataGridViewCellStyle2;
             this.goodscode1.HeaderText = "编号";
             this.goodscode1.Name = "goodscode1";
+            this.goodscode1.ReadOnly = true;
             // 
             // goodsname
             // 
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.goodsname.DefaultCellStyle = dataGridViewCellStyle3;
             this.goodsname.HeaderText = "名称";
             this.goodsname.Name = "goodsname";
+            this.goodsname.ReadOnly = true;
             // 
             // amount
             // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.amount.DefaultCellStyle = dataGridViewCellStyle4;
             this.amount.HeaderText = "数量";
             this.amount.Name = "amount";
+            this.amount.ReadOnly = true;
             // 
             // outamount
             // 
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.outamount.DefaultCellStyle = dataGridViewCellStyle5;
             this.outamount.HeaderText = "出库数";
             this.outamount.Name = "outamount";
             // 
             // goodsunit
             // 
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.goodsunit.DefaultCellStyle = dataGridViewCellStyle6;
             this.goodsunit.HeaderText = "单位";
             this.goodsunit.Name = "goodsunit";
+            this.goodsunit.ReadOnly = true;
             // 
             // goodsprice
             // 
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.goodsprice.DefaultCellStyle = dataGridViewCellStyle7;
             this.goodsprice.HeaderText = "价格";
             this.goodsprice.Name = "goodsprice";
+            this.goodsprice.ReadOnly = true;
             // 
             // CheckBatch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(779, 378);
+            this.Controls.Add(this.BT_close);
             this.Controls.Add(this.BT_sureBatch);
             this.Controls.Add(this.DGV_batchDetail);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -125,6 +166,7 @@
 
         private System.Windows.Forms.DataGridView DGV_batchDetail;
         private System.Windows.Forms.Button BT_sureBatch;
+        private System.Windows.Forms.Button BT_close;
         private System.Windows.Forms.DataGridViewTextBoxColumn detailid;
         private System.Windows.Forms.DataGridViewTextBoxColumn goodscode1;
         private System.Windows.Forms.DataGridViewTextBoxColumn goodsname;

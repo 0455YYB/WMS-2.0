@@ -15,6 +15,7 @@ namespace WMS.Stock
     {
         private static OutStockOrder outStockOrder;
         DataTable minusIDAndAmount=null;
+        DataTable sourceData = null;
         SqlExecute sqlExecute = new SqlExecute();
         private static string sign = "C";
 
@@ -56,6 +57,19 @@ namespace WMS.Stock
             CB_searchCode.SelectedIndex = -1;
         }
 
+        public void SelectItem(object sender,EventArgs args)
+        {
+            if(CB_searchCode.SelectedIndex!=-1)
+            {
+                string goodsInfo = CB_searchCode.Text.Trim();
+                string[] infoArrage = goodsInfo.Split('|');
+                string code = infoArrage[0];
+                CheckBatch checkBatch = new CheckBatch(code);
+                checkBatch.TE += AddTataToTable;
+                checkBatch.ShowDialog();
+            }
+        }
+
         public void SelectChoice(object sender,EventArgs args)
         {
 
@@ -85,6 +99,7 @@ namespace WMS.Stock
                     throw;
                 }
             }
+
         }
 
 
