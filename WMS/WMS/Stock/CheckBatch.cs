@@ -16,6 +16,7 @@ namespace WMS.Stock
     {
         public event transEvent TE;
         DataTable batch;
+        DataTable outBatch=new DataTable();
         string goodscode;
         SqlExecute sqlExecute = new SqlExecute();
 
@@ -29,29 +30,33 @@ namespace WMS.Stock
 
         private void BT_sureBatch_Click(object sender, EventArgs e)
         {
+            outBatch = batch.Clone();
             for(int i=0;i<DGV_batchDetail.Rows.Count; i++)
-            {
-                double outAmount = double.Parse(DGV_batchDetail.Rows[i].Cells[4].Value.ToString().Trim());
-                if(outAmount>0)
+          {
+                if(DGV_batchDetail.Rows[i].Cells[4].Value.ToString()!="0" )
                 {
-                    DataRow dr = batch.NewRow();
-                    dr["detailid"] = DGV_batchDetail.Rows[i].Cells[0].Value.ToString();
-                    dr["goodscode"] = DGV_batchDetail.Rows[i].Cells[1].Value.ToString();
-                    dr["goodsname"] = DGV_batchDetail.Rows[i].Cells[2].Value.ToString();
-                    dr["outamount"] = outAmount;
-                    dr["goodsunit"] = DGV_batchDetail.Rows[i].Cells[5].Value.ToString();
-                    dr["goodsprice"] = DGV_batchDetail.Rows[i].Cells[6].Value.ToString();
-                    batch.Rows.Add(dr);
+                    double outAmount = double.Parse(DGV_batchDetail.Rows[i].Cells[4].Value.ToString().Trim());
+                    if (outAmount > 0)
+                    {
+                        DataRow dr = outBatch.NewRow();
+                        dr["detailid"] = DGV_batchDetail.Rows[i].Cells[0].Value.ToString();
+                        dr["goodscode"] = DGV_batchDetail.Rows[i].Cells[1].Value.ToString();
+                        dr["goodsname"] = DGV_batchDetail.Rows[i].Cells[2].Value.ToString();
+                        dr["amount"] = outAmount;
+                        dr["goodsunit"] = DGV_batchDetail.Rows[i].Cells[5].Value.ToString();
+                        dr["goodsprice"] = DGV_batchDetail.Rows[i].Cells[6].Value.ToString();
+                        outBatch.Rows.Add(dr);
+                    }
                 }
             }
-            TE(batch);
-            batch.Clear();
+            TE(outBatch);
+            outBatch.Clear();
             this.Dispose();
         }
 
         public void LoadBatch(string goodscode)
         {
-            string loadBatchSQL = @"select detailid,goodscode,goodsname,amount,goodsunit,goodsprice from inorderdetail where goodscode=@goodscode and status=1 and amount>0 order by detailid";
+            string loadBatchSQL = @"select detailid,goodscode,goodsname,amount,0 as outamount,goodsunit,goodsprice from inorderdetail where goodscode=@goodscode and status=1 and amount>0 order by detailid";
             SQLiteParameter[] sQLiteParameter = new SQLiteParameter[1];
             sQLiteParameter[0] = new SQLiteParameter("@goodscode",goodscode);
             batch = sqlExecute.SelectInfo(sQLiteParameter, loadBatchSQL);
@@ -61,6 +66,7 @@ namespace WMS.Stock
             DGV_batchDetail.Columns["goodscode1"].DataPropertyName = batch.Columns["goodscode"].ToString();
             DGV_batchDetail.Columns["goodsname"].DataPropertyName = batch.Columns["goodsname"].ToString();
             DGV_batchDetail.Columns["amount"].DataPropertyName = batch.Columns["amount"].ToString();
+            DGV_batchDetail.Columns["outamount"].DataPropertyName = batch.Columns["outamount"].ToString();
             DGV_batchDetail.Columns["goodsunit"].DataPropertyName = batch.Columns["goodsunit"].ToString();
             DGV_batchDetail.Columns["goodsprice"].DataPropertyName = batch.Columns["goodsprice"].ToString();
         }

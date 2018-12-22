@@ -99,7 +99,23 @@ namespace WMS.Stock
                     throw;
                 }
             }
-
+            for(int i=0;i<dataTable.Rows.Count;i++)
+            {
+                int newIndex = DGV_outStock.Rows.Add();
+                DGV_outStock.Rows[newIndex].Cells[0].Value = dataTable.Rows[i][1].ToString();
+                DGV_outStock.Rows[newIndex].Cells[1].Value = dataTable.Rows[i][2].ToString();
+                DGV_outStock.Rows[newIndex].Cells[2].Value = dataTable.Rows[i][5].ToString();
+                DGV_outStock.Rows[newIndex].Cells[3].Value = dataTable.Rows[i][3].ToString();
+                DGV_outStock.Rows[newIndex].Cells[4].Value = dataTable.Rows[i][6].ToString();
+            }
+            double acountPrice=0;
+            for(int i=0;i<DGV_outStock.Rows.Count;i++)
+            {
+                double amount = double.Parse(DGV_outStock.Rows[i].Cells[3].Value.ToString());
+                double price = double.Parse(DGV_outStock.Rows[i].Cells[4].Value.ToString());
+                acountPrice += amount * price;
+            }
+            TB_acountprice.Text = acountPrice + "元";
         }
 
 
