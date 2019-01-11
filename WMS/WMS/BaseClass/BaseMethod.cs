@@ -55,5 +55,6 @@ namespace WMS.BaseClass
                 comboBox.DataSource = dataTable;
             }
         }
+
     }
 }

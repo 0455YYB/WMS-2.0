@@ -243,6 +243,7 @@ namespace WMS.SQLHelper
                 {
                     string goodscode = dataTable.Rows[i][0].ToString();
                     double amount = double.Parse(dataTable.Rows[i][1].ToString());
+
                 }
                 trans.Commit();
             }

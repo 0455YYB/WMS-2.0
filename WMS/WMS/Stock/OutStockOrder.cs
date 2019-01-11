@@ -22,6 +22,8 @@ namespace WMS.Stock
         private OutStockOrder()
         {
             InitializeComponent();
+            string loadDeptSql = "select code,name from department where status=0";
+
         }
 
         public static OutStockOrder GetOutStockOrder()
@@ -118,10 +120,15 @@ namespace WMS.Stock
             TB_acountprice.Text = acountPrice + "元";
         }
 
+        private void TSB_save_Click(object sender, EventArgs e)
+        {
 
- 
+        }
 
-      
+
+
+
+
 
         //查询药品时弹出datagirdview显示当前有库存的批次按时间排序，填好数确认之后将扣减明细id和数量存放到minusIDAndAmount
     }

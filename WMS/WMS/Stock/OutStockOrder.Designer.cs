@@ -49,9 +49,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CB_searchCode = new System.Windows.Forms.ComboBox();
             this.lable = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CB_outType = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.CB_outDept = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
@@ -93,6 +93,7 @@
             this.TSB_save.Name = "TSB_save";
             this.TSB_save.Size = new System.Drawing.Size(62, 22);
             this.TSB_save.Text = "保 存";
+            this.TSB_save.Click += new System.EventHandler(this.TSB_save_Click);
             // 
             // toolStripSeparator3
             // 
@@ -233,19 +234,19 @@
             this.lable.TabIndex = 5;
             this.lable.Text = "出库类型";
             // 
-            // comboBox1
+            // CB_outType
             // 
-            this.comboBox1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.CB_outType.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CB_outType.FormattingEnabled = true;
+            this.CB_outType.Items.AddRange(new object[] {
             "正常出库",
             "科室借调",
             "损耗出库",
             "退供应商"});
-            this.comboBox1.Location = new System.Drawing.Point(112, 56);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 22);
-            this.comboBox1.TabIndex = 6;
+            this.CB_outType.Location = new System.Drawing.Point(112, 56);
+            this.CB_outType.Name = "CB_outType";
+            this.CB_outType.Size = new System.Drawing.Size(121, 22);
+            this.CB_outType.TabIndex = 6;
             // 
             // label2
             // 
@@ -257,19 +258,19 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "出库科室";
             // 
-            // comboBox2
+            // CB_outDept
             // 
-            this.comboBox2.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.CB_outDept.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CB_outDept.FormattingEnabled = true;
+            this.CB_outDept.Items.AddRange(new object[] {
             "正常出库",
             "科室借调",
             "损耗出库",
             "退供应商"});
-            this.comboBox2.Location = new System.Drawing.Point(352, 56);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 22);
-            this.comboBox2.TabIndex = 8;
+            this.CB_outDept.Location = new System.Drawing.Point(352, 56);
+            this.CB_outDept.Name = "CB_outDept";
+            this.CB_outDept.Size = new System.Drawing.Size(121, 22);
+            this.CB_outDept.TabIndex = 8;
             // 
             // label4
             // 
@@ -297,9 +298,9 @@
             this.ClientSize = new System.Drawing.Size(1171, 615);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.CB_outDept);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.CB_outType);
             this.Controls.Add(this.lable);
             this.Controls.Add(this.CB_searchCode);
             this.Controls.Add(this.label1);
@@ -339,9 +340,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox CB_searchCode;
         private System.Windows.Forms.Label lable;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CB_outType;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox CB_outDept;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
     }
