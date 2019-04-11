@@ -174,7 +174,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(373, 397);
+            this.label3.Location = new System.Drawing.Point(378, 473);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 14);
             this.label3.TabIndex = 1;
@@ -184,7 +184,7 @@
             // 
             this.TB_acountprice.AutoSize = true;
             this.TB_acountprice.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TB_acountprice.Location = new System.Drawing.Point(462, 397);
+            this.TB_acountprice.Location = new System.Drawing.Point(475, 473);
             this.TB_acountprice.Name = "TB_acountprice";
             this.TB_acountprice.Size = new System.Drawing.Size(49, 14);
             this.TB_acountprice.TabIndex = 2;
@@ -200,7 +200,7 @@
             this.groupBox2.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupBox2.Location = new System.Drawing.Point(14, 104);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1145, 456);
+            this.groupBox2.Size = new System.Drawing.Size(1145, 499);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "单据详细信息";

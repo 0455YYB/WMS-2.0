@@ -12,6 +12,7 @@ namespace WMS.SQLHelper
     class SqlExecute
     {
         static string dataBaseFile = System.Environment.CurrentDirectory + @"\database\WMS.sqlite";
+        string ConString = "Data Source=" + dataBaseFile + ";Version=3;";
         static bool existFile = File.Exists(dataBaseFile);
         public SQLiteConnection sqliteCon = new SQLiteConnection("Data Source=" + dataBaseFile + ";Version=3;");
         public SQLiteCommand sqliteCom = new SQLiteCommand();
@@ -251,6 +252,47 @@ namespace WMS.SQLHelper
             {
                 trans.Rollback();
                 throw;
+            }
+            return result;
+        }
+
+        ///<summary>
+        ///sqlite事务，用于同时插入和更新多条记录
+        ///</summary>
+        public int SQLTrans(string SQLstr,SQLiteParameter[][] param)
+        {
+            int result = 0;
+            using (SQLiteConnection transCon = new SQLiteConnection(ConString))
+            {
+                transCon.Open();
+                IDbTransaction trans = transCon.BeginTransaction();
+                SQLiteParameter[] sqliteParameter = new SQLiteParameter[param.GetLength(0)];
+                try
+                {
+                    sqliteCom.CommandText = SQLstr;
+                    sqliteCom.Connection = transCon;
+                    for (int i = 0; i < param.GetLength(1); i++)
+                    {
+                        for (int y = 0; y < param.GetLength(0); y++)
+                        {
+                            sqliteParameter[y] = param[i][y];
+                        }
+                        sqliteCom.Parameters.AddRange(sqliteParameter);
+                        sqliteCom.ExecuteNonQuery();
+                    }
+                    trans.Commit();
+                }
+                catch(Exception ex)
+                {
+                    trans.Rollback();
+                    throw;
+                }
+                finally
+                {
+                    transCon.Close();
+                }
+
+                
             }
             return result;
         }
