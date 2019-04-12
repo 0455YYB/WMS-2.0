@@ -259,6 +259,8 @@ namespace WMS.SQLHelper
         ///<summary>
         ///sqlite事务，用于同时插入和更新多条记录
         ///</summary>
+        ///<param name="SQLstr">更新SQL语句</param>
+        ///<param name="param">更新参数</param>
         public int SQLTrans(string SQLstr,SQLiteParameter[][] param)
         {
             int result = 0;
