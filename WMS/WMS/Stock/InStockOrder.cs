@@ -199,7 +199,7 @@ namespace WMS.Stock
                     {
                         CB_searchCode.Items.Add(goodsInfo.Rows[a]["code"] + "|" + goodsInfo.Rows[a]["name"] + "|" + goodsInfo.Rows[a]["name1"]);
                     }
-                    CB_searchCode.Focus();
+                    //CB_searchCode.Focus();
                     CB_searchCode.Select(CB_searchCode.Text.Length, 0);
                     this.Focus();
                 }
@@ -215,6 +215,12 @@ namespace WMS.Stock
                 MessageBox.Show(ex.Message);
                 return;
             }           
+        }
+
+        private void TextUpdate(object sender,EventArgs e)
+        {
+            DataGridView searchResult = new DataGridView();
+            
         }
 
         private void CB_search_ChoiceItem(object sender,EventArgs e)

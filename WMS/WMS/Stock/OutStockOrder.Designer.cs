@@ -134,7 +134,7 @@
             this.Column5,
             this.Column6,
             this.Column7});
-            this.DGV_outStock.Location = new System.Drawing.Point(6, 22);
+            this.DGV_outStock.Location = new System.Drawing.Point(6, 87);
             this.DGV_outStock.Name = "DGV_outStock";
             this.DGV_outStock.RowTemplate.Height = 23;
             this.DGV_outStock.Size = new System.Drawing.Size(944, 296);
@@ -174,7 +174,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(373, 332);
+            this.label3.Location = new System.Drawing.Point(378, 473);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 14);
             this.label3.TabIndex = 1;
@@ -184,7 +184,7 @@
             // 
             this.TB_acountprice.AutoSize = true;
             this.TB_acountprice.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TB_acountprice.Location = new System.Drawing.Point(462, 332);
+            this.TB_acountprice.Location = new System.Drawing.Point(475, 473);
             this.TB_acountprice.Name = "TB_acountprice";
             this.TB_acountprice.Size = new System.Drawing.Size(49, 14);
             this.TB_acountprice.TabIndex = 2;
@@ -195,10 +195,12 @@
             this.groupBox2.Controls.Add(this.TB_acountprice);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.DGV_outStock);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.CB_searchCode);
             this.groupBox2.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 204);
+            this.groupBox2.Location = new System.Drawing.Point(14, 104);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1145, 370);
+            this.groupBox2.Size = new System.Drawing.Size(1145, 499);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "单据详细信息";
@@ -207,7 +209,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(26, 154);
+            this.label1.Location = new System.Drawing.Point(6, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 14);
             this.label1.TabIndex = 3;
@@ -217,7 +219,7 @@
             // 
             this.CB_searchCode.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.CB_searchCode.FormattingEnabled = true;
-            this.CB_searchCode.Location = new System.Drawing.Point(96, 149);
+            this.CB_searchCode.Location = new System.Drawing.Point(74, 36);
             this.CB_searchCode.Name = "CB_searchCode";
             this.CB_searchCode.Size = new System.Drawing.Size(121, 22);
             this.CB_searchCode.TabIndex = 4;
@@ -302,8 +304,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.CB_outType);
             this.Controls.Add(this.lable);
-            this.Controls.Add(this.CB_searchCode);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.toolStrip1);
             this.Name = "OutStockOrder";
