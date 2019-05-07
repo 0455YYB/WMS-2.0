@@ -182,6 +182,10 @@ namespace WMS.Stock
             try
             {
                 string searchCode = CB_searchCode.Text.Trim();
+                if(searchCode==string.Empty)
+                {
+                    return;
+                }
                 string selectSQL = @"select goods.code,goods.name,unit.name  from goods,unit where goods.unit=unit.code and (goods.code like @searchCode  or goods.name like  @searchCode)";
                 SQLiteParameter[] sQLiteParameter = new SQLiteParameter[1];
                 sQLiteParameter[0] = new SQLiteParameter("@searchCode", "%" + searchCode + "%");
@@ -197,6 +201,7 @@ namespace WMS.Stock
                     }
                     CB_searchCode.Focus();
                     CB_searchCode.Select(CB_searchCode.Text.Length, 0);
+                    this.Focus();
                 }
                 else
                 {
