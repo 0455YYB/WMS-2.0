@@ -11,11 +11,13 @@ namespace WMS.SQLHelper
 {
     class SqlExecute
     {
+        #region 字段
         static string dataBaseFile = System.Environment.CurrentDirectory + @"\database\WMS.sqlite";
         string ConString = "Data Source=" + dataBaseFile + ";Version=3;";
         static bool existFile = File.Exists(dataBaseFile);
         public SQLiteConnection sqliteCon = new SQLiteConnection("Data Source=" + dataBaseFile + ";Version=3;");
         public SQLiteCommand sqliteCom = new SQLiteCommand();
+        #endregion
 
         /// <summary>
         /// 登录时获取用户信息

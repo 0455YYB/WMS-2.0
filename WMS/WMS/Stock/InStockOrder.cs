@@ -195,17 +195,18 @@ namespace WMS.Stock
                     {
                         CB_searchCode.Items.Add(goodsInfo.Rows[a]["code"] + "|" + goodsInfo.Rows[a]["name"] + "|" + goodsInfo.Rows[a]["name1"]);
                     }
-                    //CB_searchCode.Focus();
+                    
+                    //CB_searchCode.SelectedIndex = -1;
+                    CB_searchCode.Focus();
                     CB_searchCode.Select(CB_searchCode.Text.Length, 0);
+                    this.CB_searchCode.DroppedDown = true;
                 }
                 else
                 {
                     return;
                 }
-                this.CB_searchCode.DroppedDown = true;
-                CB_searchCode.SelectedIndex = -1;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return;
