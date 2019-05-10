@@ -13,6 +13,10 @@ namespace WMS.Stock
 {
     public partial class In_StockOrder : Form
     {
+        #region 字段
+        ListBox listBox = null;
+        #endregion
+
         #region 窗口初始化参数
         private static In_StockOrder inStockOrder;
         private static string sign = "R";
@@ -28,6 +32,9 @@ namespace WMS.Stock
             orderCode = BaseClass.BaseMethod.GreateOrderNmber(sign);
             BaseClass.BaseMethod.LoadCombobox(CB_supplier,iniString);
             newCreateOrder = "0";
+            TextChang_new();
+
+
         }
 
         public In_StockOrder(string order)
@@ -38,6 +45,7 @@ namespace WMS.Stock
             this.DGV_orderDetail.AutoGenerateColumns = false;
             newCreateOrder = "1";
             LoadDGV_orderDetail(orderCode);
+            TextChang_new();
         }
 
         public static In_StockOrder GetInStockOrder()
@@ -203,11 +211,7 @@ namespace WMS.Stock
                     //CB_searchCode.SelectedIndex = -1;
                     CB_searchCode.Focus();
                     CB_searchCode.Select(CB_searchCode.Text.Length, 0);
-<<<<<<< HEAD
                     this.CB_searchCode.DroppedDown = true;
-=======
-                    this.Focus();
->>>>>>> 711d888e47cef9377c8c9eeacc8f26c08e89d3af
                 }
                 else
                 {
@@ -342,6 +346,20 @@ namespace WMS.Stock
             DGV_orderDetail.Columns["unit"].DataPropertyName = detailInfo.Columns["goodsunit"].ToString();
             DGV_orderDetail.Columns["price"].DataPropertyName = detailInfo.Columns["goodsprice"].ToString();
             DGV_orderDetail.Columns["batch"].DataPropertyName = detailInfo.Columns["batch"].ToString();
+        }
+
+        private void TextChang_new()
+        {
+            if(listBox==null)
+            {
+                listBox = new ListBox();
+                listBox.FormattingEnabled = true;
+                listBox.Left = CB_searchCode.Left;
+                listBox.Top = CB_searchCode.Top + CB_searchCode.Height;
+                listBox.Size = new Size(100, 50);
+                //listBox.Visible = true;
+                //listBox.BringToFront();
+            }
         }
     }
 }

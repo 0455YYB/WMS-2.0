@@ -133,6 +133,5 @@ E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.Stock.OrderInfo.resources
 D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.Stock.OrderInfo.resources
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.Stock.In_StockOrder.resources
 E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.Stock.CheckBatch.resources
-E:\GitHub\WMS\WMS\WMS\WMS\obj\Debug\WMS.csprojResolveAssemblyReference.cache
 D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.Stock.CheckBatch.resources
 D:\Github\WMS-2.0\WMS-2.0\WMS\WMS\obj\Debug\WMS.Stock.In_StockOrder.resources
