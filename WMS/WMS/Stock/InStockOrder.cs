@@ -357,8 +357,10 @@ namespace WMS.Stock
                 listBox.Left = CB_searchCode.Left;
                 listBox.Top = CB_searchCode.Top + CB_searchCode.Height;
                 listBox.Size = new Size(100, 50);
-                //listBox.Visible = true;
-                //listBox.BringToFront();
+                listBox.Visible = true;
+                listBox.BringToFront();
+                this.Controls.Add(listBox);
+                this.Controls.Remove(listBox);
             }
         }
     }
