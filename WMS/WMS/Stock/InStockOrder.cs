@@ -32,9 +32,6 @@ namespace WMS.Stock
             orderCode = BaseClass.BaseMethod.GreateOrderNmber(sign);
             BaseClass.BaseMethod.LoadCombobox(CB_supplier,iniString);
             newCreateOrder = "0";
-            TextChang_new();
-
-
         }
 
         public In_StockOrder(string order)
